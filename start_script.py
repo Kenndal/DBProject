@@ -19,4 +19,5 @@ if __name__ == '__main__':
 
     home_controller.stop_devises()
     home_controller.stop_sensors()
+    home_controller.stop_day()
     home_controller.disconnect_sql()

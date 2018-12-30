@@ -27,7 +27,8 @@ class HomeController:
         self.flag = True
 
         self.day = Day(self.sql_controller, self.logger, self.flag)
-        self.day.start()
+        self.day_thread = threading.Thread(target=self.day.start)
+        self.day_thread.start()
 
     def add_water_device(self, name, _type, brand, room):
         self.logger.info("Create water device with name {}.".format(name))
@@ -111,3 +112,4 @@ class HomeController:
     def stop_day(self):
         self.logger.info("Stop day.")
         self.day.flag = False
+        self.day_thread.join()
