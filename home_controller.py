@@ -1,6 +1,7 @@
 import threading
 
 from psql.sql_controller import SqlController
+from simulators.day import Day
 from simulators.devices import WaterDevice, PowerSocket, LightBulb
 import logging
 from simulators.enum import SensorType
@@ -24,6 +25,9 @@ class HomeController:
         self.device_thread_list = []
         self.sensor_thread_list = []
         self.flag = True
+
+        self.day = Day(self.sql_controller, self.logger, self.flag)
+        self.day.start()
 
     def add_water_device(self, name, _type, brand, room):
         self.logger.info("Create water device with name {}.".format(name))
@@ -92,10 +96,9 @@ class HomeController:
 
     def stop_sensors(self):
         self.logger.warn("Stopping all sensors.")
-        self.flag = False
         if self.sensor_list:
             for sensor in self.sensor_list:
-                sensor.set_flag(self.flag)
+                sensor.set_flag(False)
             for thread in self.sensor_thread_list:
                 thread.join()
 
@@ -104,3 +107,7 @@ class HomeController:
 
     def disconnect_sql(self):
         self.sql_controller.disconnect()
+
+    def stop_day(self):
+        self.logger.info("Stop day.")
+        self.day.flag = False

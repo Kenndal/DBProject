@@ -1,3 +1,4 @@
+import time
 from time import sleep
 import random
 
@@ -18,6 +19,7 @@ class WaterDevice:
         self.logger.info("Water devise {} started.".format(self.name))
         while self.flag:
             value = random.randint(5, 10)
+            _time = time.ctime()[-13:-5]
             self.logger.info("{} used {} water".format(self.name, value))
             # TODO add method to save value in database (TABLE Water Consumption)
             sleep(20)
@@ -39,6 +41,7 @@ class PowerSocket:
         self.logger.info("Power socket %s started.", self.name)
         while self.flag:
             value = random.randint(4, 7)
+            _time = time.ctime()[-13:-5]
             self.logger.info("{} used {} power".format(self.name, value))
             # TODO add method to save value in database (TABLE Power Consumption)
             sleep(3600)
@@ -60,11 +63,13 @@ class LightBulb:
     def check_status_start(self):
         self.logger.info("Light bulb started in room {}.".format(self.room.name))
         while self.flag:
-            self.level_of_consumption -= 0.01
             if self.level_of_consumption != 0:
+                self.level_of_consumption -= 0.01
                 power_consumption = random.randint(3, 6)
             else:
+                self.level_of_consumption = 0
                 power_consumption = 0
+            _time = time.ctime()[-13:-5]
             self.logger.info(
                 "Bulb from room %{} information: level of consumption: {}, power consumption: {}.".format(
                     self.room.name, self.level_of_consumption, power_consumption))

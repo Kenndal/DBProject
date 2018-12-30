@@ -10,7 +10,7 @@ class SqlController:
         self.cursor = None
         self.connection = None
 
-        self.logger.info("Created sql controller.")
+        self.logger.info("Created psql controller.")
 
     def connect(self):
         self.connection, self.cursor = connect_to_db(self.logger)
