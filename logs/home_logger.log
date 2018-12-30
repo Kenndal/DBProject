@@ -1,0 +1,19 @@
+INFO:home_logger:Home Controller started.
+INFO:home_logger:Created sql controller.
+INFO:home_logger:Connecting to the PostgreSQL database...
+INFO:home_logger:PostgreSQL database version:
+INFO:home_logger:('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-16ubuntu3) 7.3.0, 64-bit',)
+INFO:home_logger:Create water device with name Pralka_KEK.
+INFO:home_logger:Try to insert new Water Device Pralka_KEK in room bathroom...
+CRITICAL:home_logger:duplicate key value violates unique constraint "water_devices_pkey"
+DETAIL:  Key (name)=(Pralka_KEK                    ) already exists.
+
+WARNING:home_logger:Starting all devices.
+WARNING:home_logger:No created devices.
+WARNING:home_logger:Starting all sensors.
+WARNING:home_logger:No created sensors.
+WARNING:home_logger:Stopping all devices.
+WARNING:home_logger:No created devices, Nothing to stop.
+WARNING:home_logger:Stopping all sensors.
+WARNING:home_logger:No created sensors, Nothing to stop.
+INFO:home_logger:Disconnect from DB
