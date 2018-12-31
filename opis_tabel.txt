@@ -5,8 +5,8 @@ create sequence rooms_seq minvalue 1 maxvalue 16 start 1;
 create table rooms(r_id int4 default nextval('rooms_seq'), name char(30) primary key);
  
 create table temperature(r_id int4 not null, d_id int4 not null, time char(16) not null , value int4);
-create table humidity(r_id int4 not null, d_id not null, time char(16) not null, value int4);
-create table smoke(r_id int4 not null, d_id int4 not null, time char(16) not null, value int4);
+create table humidity(r_id int4 not null, d_id int4 not null, time char(16) not null, value int4);
+create table smoke(r_id int4 not null, d_id int4 not null, time char(16) not null, value float(5));
 
 create sequence water_d_seq;
 create table water_devices(wd_id int4 primary key default nextval('water_d_seq') , r_id int4 not null, name char(30) unique, type char(30) not null, brand char(30) not null);
@@ -14,8 +14,8 @@ create table water_consumption(wd_id int4 references water_devices(wd_id) on del
 
 create sequence sockets_seq;
 create table power_sockets(ps_id int4 default nextval('sockets_seq'), r_id int4 not null, name char(30) primary key);
-create table power_condumption(ps_id int4 not null, d_id int4 not null, value int4, time char(16) not null);
+create table power_consumption(ps_id int4 not null, d_id int4 not null, value int4, time char(16) not null);
 
-create sequence bulbs_seq maxvalue 64 minvalue 1;
-create table light_bulbs(lb_id int4 primary key default nextval('bulbs_seq'), r_id int4 not null, type char(30), brand char(30) );
-create table light_bulb_status(lb_id int4 references light_bulbs(lb_id) on delete cascade, d_id int4 not null, level_of_consumption int4 not null, power_consumption int4  not null, time char(16) not null);
+create sequence bulbs_seq;
+create table light_bulbs(lb_id int4 primary key default nextval('bulbs_seq'), r_id int4 not null, name char(30) unique not null, type char(30), brand char(30) );
+create table light_bulb_status(lb_id int4 references light_bulbs(lb_id) on delete cascade, d_id int4 not null, level_of_consumption float() not null, power_consumption int4  not null, time char(16) not null);

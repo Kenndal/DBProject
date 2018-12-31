@@ -4,6 +4,7 @@ from datetime import datetime
 import psycopg2
 
 from psql.connection import connect_to_db, disconnect_from_db
+from simulators.enum import SensorType
 
 
 class SqlController:
@@ -137,8 +138,29 @@ class SqlController:
 
             self.cursor.execute(sql, (lb_id, self.d_id, level_of_consumption, power_consumption, _time))
             self.connection.commit()
-            self.logger.info("Insert complete for lb_id: {}".format(lb_id))
+            self.logger.info("Insert complete for lb_id: {}.".format(lb_id))
 
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+
+    def insert_into_sensor_table(self, room, value, _time, sensor_type):
+        if sensor_type == SensorType.temperature_sensor:
+            sql = """insert into temperature (r_id, d_id, time, value) values (%s, %s, %s, %s);"""
+        elif sensor_type == SensorType.humidity_sensor:
+            sql = """insert into humidity (r_id, d_id, time, value) values (%s, %s, %s, %s);"""
+        elif sensor_type == SensorType.smoke_sensor:
+            sql = """insert into smoke (r_id, d_id, time, value) values (%s, %s, %s, %s);"""
+        else:
+            raise ValueError("Wrong sensor type, sensor not created.")
+
+        try:
+            self.get_day_id()
+            self.logger.info("Try to insert value: {} from sensor: {} in room: {}...".format(value, sensor_type.name,
+                                                                                          room.name))
+            self.cursor.execute(sql, (room.value, self.d_id, _time, value))
+            self.connection.commit()
+            self.logger.info("Insert complete for sensor {}".format(sensor_type.name))
         except (Exception, psycopg2.DatabaseError) as error:
             self.connection.rollback()
             self.logger.fatal(error)

@@ -13,7 +13,8 @@ class HomeController:
 
     def __init__(self):
         # Create logger
-        logging.basicConfig(filename='logs/home_logger.log', filemode='w', level=logging.DEBUG)
+        logging.basicConfig(filename='logs/home_logger.log', filemode='w', level=logging.DEBUG,
+                            format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s')
         self.logger = logging.getLogger("home_logger")
         self.logger.info("Home Controller started.")
 
@@ -67,11 +68,11 @@ class HomeController:
     def add_sensor(self, sensor_type, room):
         self.logger.info("Create sensor {}.".format(sensor_type))
         if sensor_type == SensorType.temperature_sensor:
-            sensor = TemperatureSensor(room, self.sql_controller, self.logger, self.flag)
+            sensor = TemperatureSensor(room, self.sql_controller, self.logger, sensor_type,  self.flag)
         elif sensor_type == SensorType.humidity_sensor:
-            sensor = HumilitySensor(room, self.sql_controller, self.logger, self.flag)
+            sensor = HumilitySensor(room, self.sql_controller, self.logger, sensor_type,  self.flag)
         elif sensor_type == SensorType.smoke_sensor:
-            sensor = SmokeSensor(room, self.sql_controller, self.logger, self.flag)
+            sensor = SmokeSensor(room, self.sql_controller, self.logger, sensor_type,  self.flag)
         else:
             raise ValueError("Wrong sensor type, sensor not created.")
         # TODO: Add sensor to Table
