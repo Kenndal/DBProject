@@ -22,7 +22,7 @@ class WaterDevice:
             _time = str(time.ctime())[-13:-5]
             self.logger.info("{} used {} water".format(self.name, value))
             self.sql_controller.insert_into_water_consumption(self.wd_id, value, _time)
-            sleep(60)
+            sleep(10)
 
 
 class PowerSocket:
@@ -43,7 +43,7 @@ class PowerSocket:
             _time = time.ctime()[-13:-5]
             self.logger.info("{} used {} power".format(self.name, value))
             self.sql_controller.insert_into_power_consumption(self.ps_id, value, _time)
-            sleep(60)
+            sleep(10)
 
 
 class LightBulb:
@@ -74,4 +74,4 @@ class LightBulb:
                     self.name, self.room.name, self.level_of_consumption, power_consumption))
             self.sql_controller.insert_into_light_bulb_status(self.lb_id, self.level_of_consumption,
                                                               power_consumption, _time)
-            sleep(60)
+            sleep(10)

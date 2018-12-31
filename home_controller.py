@@ -43,7 +43,7 @@ class HomeController:
             self.logger.warn("Removing {}".format(water_device.name))
             del water_device
 
-    def add_power_socket(self, name, room,):
+    def add_power_socket(self, name, room, ):
         self.logger.info("Create power socket with name {}.".format(name))
         power_socket = PowerSocket(name, room, self.sql_controller, self.logger, self.flag)
         ps_id = self.sql_controller.insert_into_power_sockets(power_socket)
@@ -68,11 +68,11 @@ class HomeController:
     def add_sensor(self, sensor_type, room):
         self.logger.info("Create sensor {}.".format(sensor_type))
         if sensor_type == SensorType.temperature_sensor:
-            sensor = TemperatureSensor(room, self.sql_controller, self.logger, sensor_type,  self.flag)
+            sensor = TemperatureSensor(room, self.sql_controller, self.logger, sensor_type, self.flag)
         elif sensor_type == SensorType.humidity_sensor:
-            sensor = HumilitySensor(room, self.sql_controller, self.logger, sensor_type,  self.flag)
+            sensor = HumilitySensor(room, self.sql_controller, self.logger, sensor_type, self.flag)
         elif sensor_type == SensorType.smoke_sensor:
-            sensor = SmokeSensor(room, self.sql_controller, self.logger, sensor_type,  self.flag)
+            sensor = SmokeSensor(room, self.sql_controller, self.logger, sensor_type, self.flag)
         else:
             raise ValueError("Wrong sensor type, sensor not created.")
         # TODO: Add sensor to Table
@@ -128,3 +128,17 @@ class HomeController:
         self.logger.warn("Stop day.")
         self.day.flag = False
         self.day_thread.join()
+
+    def delete_device_by_name(self, name):
+        self.logger.warn("try to delete device: {}".format(name))
+        is_removed = False
+        for device in self.device_list:
+            if device.name == name:
+                is_removed = True
+                del device
+                self.logger.warn("Device: {} removed".format(name))
+                break
+        if is_removed:
+            self.sql_controller.delete_device(name)
+        else:
+            self.logger.critical("Device with name {} didnt find!".format(name))

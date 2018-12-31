@@ -12,7 +12,7 @@ class SqlController:
         self.logger = logger
         self.cursor = None
         self.connection = None
-        self.d_id = None
+        self.d_id = None  # current day id.
 
         self.logger.info("Created psql controller.")
 
@@ -73,10 +73,11 @@ class SqlController:
 
         try:
             self.get_day_id()
-            self.logger.info("Try to insert value {} with params: wd_id: {} d_id: {}...".format(value, wd_id, self.d_id))
+            self.logger.info(
+                "Try to insert value {} with params: wd_id: {} d_id: {}...".format(value, wd_id, self.d_id))
             self.cursor.execute(sql, (wd_id, self.d_id, value, _time))
             self.connection.commit()
-            self.logger.info("Insert complete for wd_id: {}.". format(wd_id))
+            self.logger.info("Insert complete for wd_id: {}.".format(wd_id))
         except (Exception, psycopg2.DatabaseError) as error:
             self.connection.rollback()
             self.logger.fatal(error)
@@ -157,10 +158,26 @@ class SqlController:
         try:
             self.get_day_id()
             self.logger.info("Try to insert value: {} from sensor: {} in room: {}...".format(value, sensor_type.name,
-                                                                                          room.name))
+                                                                                             room.name))
             self.cursor.execute(sql, (room.value, self.d_id, _time, value))
             self.connection.commit()
             self.logger.info("Insert complete for sensor {}".format(sensor_type.name))
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+
+    def delete_device(self, name):
+        """Support only water devices and light bulbs"""
+
+        sql = ["""delete from water_devices where name = %s;""",
+               """delete from light_bulbs where name = %s;"""]
+
+        try:
+            self.logger.warn("Try to delete device: {} from data base...".format(name))
+            self.cursor.execute(sql[0], (name,))
+            self.cursor.execute(sql[0], (name,))
+            self.connection.commit()
+            self.logger.warn("Deletion complete.")
         except (Exception, psycopg2.DatabaseError) as error:
             self.connection.rollback()
             self.logger.fatal(error)
