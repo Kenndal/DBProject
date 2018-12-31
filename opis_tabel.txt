@@ -1,5 +1,5 @@
 create sequence day_seq;
-create table days(d_id int4 default nextval('day_seq'), date char(10) not null);
+create table days(d_id int4 default nextval('day_seq'), date char(10) not null unique);
 
 create sequence rooms_seq minvalue 1 maxvalue 16 start 1;
 create table rooms(r_id int4 default nextval('rooms_seq'), name char(30) primary key);

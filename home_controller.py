@@ -110,6 +110,6 @@ class HomeController:
         self.sql_controller.disconnect()
 
     def stop_day(self):
-        self.logger.info("Stop day.")
+        self.logger.warn("Stop day.")
         self.day.flag = False
         self.day_thread.join()

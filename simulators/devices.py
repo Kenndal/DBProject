@@ -16,12 +16,12 @@ class WaterDevice:
         self.flag = flag
 
     def check_status_start(self):
-        self.logger.info("Water devise {} started.".format(self.name))
+        self.logger.info("Water device {} started.".format(self.name))
         while self.flag:
             value = random.randint(5, 10)
-            _time = time.ctime()[-13:-5]
+            _time = str(time.ctime())[-13:-5]
             self.logger.info("{} used {} water".format(self.name, value))
-            # TODO add method to save value in database (TABLE Water Consumption)
+            self.sql_controller.insert_into_water_consumption(self.wd_id, value, _time)
             sleep(20)
 
 

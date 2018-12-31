@@ -5,18 +5,22 @@ INFO:home_logger:PostgreSQL database version:
 INFO:home_logger:('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-16ubuntu3) 7.3.0, 64-bit',)
 INFO:home_logger:Created instance day.
 INFO:home_logger:Starting counting time in day instance.
+INFO:home_logger:Get new day
+INFO:home_logger:New day with param: d_id:18
 INFO:home_logger:Create water device with name Pralka_KEK.
-INFO:home_logger:Try to insert new Water Device Pralka_KEK in room bathroom...
-CRITICAL:home_logger:duplicate key value violates unique constraint "water_devices_name_key"
-DETAIL:  Key (name)=(Pralka_KEK                    ) already exists.
-
+INFO:home_logger:Try to insert new Water Device Pralka_KEK in room bathroom to table water_devices...
+INFO:home_logger:Insert Complete. New Water Device with wd_id: 19 added.
 WARNING:home_logger:Starting all devices.
-WARNING:home_logger:No created devices.
+INFO:home_logger:Water devise Pralka_KEK started.
 WARNING:home_logger:Starting all sensors.
+INFO:home_logger:Pralka_KEK used 5 water
 WARNING:home_logger:No created sensors.
+INFO:home_logger:Try to select days
+INFO:home_logger:Select done: (18, '2018-12-3 ')
+INFO:home_logger:Try to insert value with params: wd_id: 19 d_id: 18...
+INFO:home_logger:Insert complete.
 WARNING:home_logger:Stopping all devices.
-WARNING:home_logger:No created devices, Nothing to stop.
 WARNING:home_logger:Stopping all sensors.
 WARNING:home_logger:No created sensors, Nothing to stop.
-INFO:home_logger:Stop day.
+WARNING:home_logger:Stop day.
 INFO:home_logger:Disconnect from DB

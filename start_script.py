@@ -6,6 +6,7 @@ from simulators.enum import SensorType, Rooms
 if __name__ == '__main__':
 
     home_controller = HomeController()
+    sleep(5)
     # home_controller.add_sensor(SensorType.temperature_sensor, Rooms.bathroom)
     # home_controller.add_sensor(SensorType.smoke_sensor, Rooms.bathroom)
     # home_controller.add_light_bulb("LED", "DobraMarka", Rooms.bathroom)
