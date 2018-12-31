@@ -1,4 +1,5 @@
 import threading
+from time import sleep
 
 from psql.sql_controller import SqlController
 from simulators.day import Day
@@ -38,19 +39,30 @@ class HomeController:
             water_device.wd_id = wd_id
             self.device_list.append(water_device)
         else:
+            self.logger.warn("Removing {}".format(water_device.name))
             del water_device
 
     def add_power_socket(self, name, room,):
         self.logger.info("Create power socket with name {}.".format(name))
         power_socket = PowerSocket(name, room, self.sql_controller, self.logger, self.flag)
-        # TODO: Add device to Table
-        self.device_list.append(power_socket)
+        ps_id = self.sql_controller.insert_into_power_sockets(power_socket)
+        if ps_id != None:
+            power_socket.ps_id = ps_id
+            self.device_list.append(power_socket)
+        else:
+            self.logger.warn("Removing {}".format(power_socket.name))
+            del power_socket
 
-    def add_light_bulb(self, _type, brand, room):
+    def add_light_bulb(self, name, _type, brand, room):
         self.logger.info("Create light bulb.")
-        light_bulb = LightBulb(_type, brand, room, self.sql_controller, self.logger, self.flag)
-        # TODO: Add device to Table
-        self.device_list.append(light_bulb)
+        light_bulb = LightBulb(name, _type, brand, room, self.sql_controller, self.logger, self.flag)
+        lb_id = self.sql_controller.insert_into_light_bulbs(light_bulb)
+        if lb_id is not None:
+            light_bulb.lb_id = lb_id
+            self.device_list.append(light_bulb)
+        else:
+            self.logger.warn("Removing {}".format(light_bulb.name))
+            del light_bulb
 
     def add_sensor(self, sensor_type, room):
         self.logger.info("Create sensor {}.".format(sensor_type))
@@ -72,6 +84,7 @@ class HomeController:
                 t = threading.Thread(target=device.check_status_start)
                 self.device_thread_list.append(t)
                 t.start()
+                sleep(1)
         else:
             self.logger.warn("No created devices.")
 
@@ -92,6 +105,7 @@ class HomeController:
                 t = threading.Thread(target=sensor.start_sensor)
                 self.sensor_thread_list.append(t)
                 t.start()
+                sleep(1)
         else:
             self.logger.warn("No created sensors.")
 

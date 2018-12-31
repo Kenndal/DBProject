@@ -6,21 +6,36 @@ INFO:home_logger:('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-l
 INFO:home_logger:Created instance day.
 INFO:home_logger:Starting counting time in day instance.
 INFO:home_logger:Get new day
-INFO:home_logger:New day with param: d_id:18
+CRITICAL:home_logger:duplicate key value violates unique constraint "days_date_key"
+DETAIL:  Key (date)=(2018-12-31) already exists.
+
+INFO:home_logger:Create light bulb.
+INFO:home_logger:Try to insert new Light Bulb in room bathroom to table light_bulbs...
+INFO:home_logger:Insert Complete. New Light Bulb with lb_id: 3 added.
+INFO:home_logger:Create power socket with name Gniazdo1.
+INFO:home_logger:Try to insert new Power Socket Gniazdo1 in room bathroom to table power_sockets...
+INFO:home_logger:Insert Complete. New Power Socket with ps_is: 10 added.
 INFO:home_logger:Create water device with name Pralka_KEK.
 INFO:home_logger:Try to insert new Water Device Pralka_KEK in room bathroom to table water_devices...
-INFO:home_logger:Insert Complete. New Water Device with wd_id: 19 added.
+INFO:home_logger:Insert Complete. New Water Device with wd_id: 25 added.
 WARNING:home_logger:Starting all devices.
-INFO:home_logger:Water devise Pralka_KEK started.
-WARNING:home_logger:Starting all sensors.
-INFO:home_logger:Pralka_KEK used 5 water
-WARNING:home_logger:No created sensors.
+INFO:home_logger:Light bulb started in room bathroom.
+INFO:home_logger:Bulb Zarowka from room bathroom information: level of consumption: 99.99, power consumption: 3.
 INFO:home_logger:Try to select days
-INFO:home_logger:Select done: (18, '2018-12-3 ')
-INFO:home_logger:Try to insert value with params: wd_id: 19 d_id: 18...
-INFO:home_logger:Insert complete.
-WARNING:home_logger:Stopping all devices.
-WARNING:home_logger:Stopping all sensors.
-WARNING:home_logger:No created sensors, Nothing to stop.
-WARNING:home_logger:Stop day.
-INFO:home_logger:Disconnect from DB
+INFO:home_logger:Select from days done: (20, '2018-12-31')
+INFO:home_logger:Try to insert values: 99.99, 3 with params: lb_id: 3, d_id: 20.
+INFO:home_logger:Insert complete for lb_id: 3
+INFO:home_logger:Power socket Gniazdo1 started.
+INFO:home_logger:Gniazdo1 used 5 power
+INFO:home_logger:Try to select days
+INFO:home_logger:Select from days done: (20, '2018-12-31')
+INFO:home_logger:Try to insert value 5 with params: ps_id: 10, d_id: 20.
+INFO:home_logger:Insert complete for ps_id: 10
+INFO:home_logger:Water device Pralka_KEK started.
+INFO:home_logger:Pralka_KEK used 5 water
+INFO:home_logger:Try to select days
+INFO:home_logger:Select from days done: (20, '2018-12-31')
+INFO:home_logger:Try to insert value 5 with params: wd_id: 25 d_id: 20...
+INFO:home_logger:Insert complete for wd_id: 25.
+WARNING:home_logger:Starting all sensors.
+WARNING:home_logger:No created sensors.
