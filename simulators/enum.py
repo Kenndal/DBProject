@@ -15,9 +15,3 @@ class SensorType(Enum):
     temperature_sensor = "temperature_sensor"
     humidity_sensor = "humidity_sensor"
     smoke_sensor = "smoke_sensor"
-
-
-if __name__ == '__main__':
-    kek = Rooms.bathroom
-    print(kek.value)
-    print(type(kek.value))

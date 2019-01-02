@@ -47,7 +47,7 @@ class HomeController:
         self.logger.info("Create power socket with name {}.".format(name))
         power_socket = PowerSocket(name, room, self.sql_controller, self.logger, self.flag)
         ps_id = self.sql_controller.insert_into_power_sockets(power_socket)
-        if ps_id != None:
+        if ps_id is not None:
             power_socket.ps_id = ps_id
             self.device_list.append(power_socket)
         else:
@@ -75,7 +75,6 @@ class HomeController:
             sensor = SmokeSensor(room, self.sql_controller, self.logger, sensor_type, self.flag)
         else:
             raise ValueError("Wrong sensor type, sensor not created.")
-        # TODO: Add sensor to Table
         self.sensor_list.append(sensor)
 
     def start_devises(self):

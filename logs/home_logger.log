@@ -1,65 +1,148 @@
-2018-12-31 15:30:05,907 INFO home_controller - __init__: Home Controller started.
-2018-12-31 15:30:05,907 INFO sql_controller - __init__: Created psql controller.
-2018-12-31 15:30:05,908 INFO connection - connect_to_db: Connecting to the PostgreSQL database...
-2018-12-31 15:30:06,946 INFO connection - connect_to_db: PostgreSQL database version:
-2018-12-31 15:30:06,947 INFO connection - connect_to_db: ('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-16ubuntu3) 7.3.0, 64-bit',)
-2018-12-31 15:30:06,947 INFO day - __init__: Created instance day.
-2018-12-31 15:30:06,948 INFO day - start: Starting counting time in day instance.
-2018-12-31 15:30:06,948 INFO sql_controller - new_day: Get new day
-2018-12-31 15:30:06,951 CRITICAL sql_controller - new_day: duplicate key value violates unique constraint "days_date_key"
-DETAIL:  Key (date)=(2018-12-31) already exists.
+2019-01-01 22:19:28,828 INFO home_controller - __init__: Home Controller started.
+2019-01-01 22:19:28,829 INFO sql_controller - __init__: Created psql controller.
+2019-01-01 22:19:28,832 INFO connection - connect_to_db: Connecting to the PostgreSQL database...
+2019-01-01 22:19:29,881 INFO connection - connect_to_db: PostgreSQL database version:
+2019-01-01 22:19:29,884 INFO connection - connect_to_db: ('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-16ubuntu3) 7.3.0, 64-bit',)
+2019-01-01 22:19:29,884 INFO day - __init__: Created instance day.
+2019-01-01 22:19:29,884 INFO day - start: Starting counting time in day instance.
+2019-01-01 22:19:29,884 INFO sql_controller - new_day: Get new day
+2019-01-01 22:19:29,887 CRITICAL sql_controller - new_day: duplicate key value violates unique constraint "days_date_key"
+DETAIL:  Key (date)=(2019-01-01) already exists.
 
-2018-12-31 15:30:11,950 INFO home_controller - add_light_bulb: Create light bulb.
-2018-12-31 15:30:11,950 INFO sql_controller - insert_into_light_bulbs: Try to insert new Light Bulb in room bathroom to table light_bulbs...
-2018-12-31 15:30:11,956 INFO sql_controller - insert_into_light_bulbs: Insert Complete. New Light Bulb with lb_id: 6 added.
-2018-12-31 15:30:11,956 INFO home_controller - add_water_device: Create water device with name Pralka_KEK.
-2018-12-31 15:30:11,956 INFO sql_controller - insert_into_water_devices: Try to insert new Water Device Pralka_KEK in room bathroom to table water_devices...
-2018-12-31 15:30:11,959 INFO sql_controller - insert_into_water_devices: Insert Complete. New Water Device with wd_id: 28 added.
-2018-12-31 15:30:11,959 WARNING home_controller - start_devises: Starting all devices.
-2018-12-31 15:30:11,960 INFO devices - check_status_start: Light bulb started in room bathroom.
-2018-12-31 15:30:11,960 INFO devices - check_status_start: Bulb Zarowka from room bathroom information: level of consumption: 99.99, power consumption: 5.
-2018-12-31 15:30:11,960 INFO sql_controller - get_day_id: Try to select days
-2018-12-31 15:30:11,961 INFO sql_controller - get_day_id: Select from days done: (20, '2018-12-31')
-2018-12-31 15:30:11,961 INFO sql_controller - insert_into_light_bulb_status: Try to insert values: 99.99, 5 with params: lb_id: 6, d_id: 20.
-2018-12-31 15:30:11,966 INFO sql_controller - insert_into_light_bulb_status: Insert complete for lb_id: 6.
-2018-12-31 15:30:12,960 INFO devices - check_status_start: Water device Pralka_KEK started.
-2018-12-31 15:30:12,960 INFO devices - check_status_start: Pralka_KEK used 10 water
-2018-12-31 15:30:12,960 INFO sql_controller - get_day_id: Try to select days
-2018-12-31 15:30:12,963 INFO sql_controller - get_day_id: Select from days done: (20, '2018-12-31')
-2018-12-31 15:30:12,963 INFO sql_controller - insert_into_water_consumption: Try to insert value 10 with params: wd_id: 28 d_id: 20...
-2018-12-31 15:30:12,967 INFO sql_controller - insert_into_water_consumption: Insert complete for wd_id: 28.
-2018-12-31 15:30:13,961 WARNING home_controller - start_sensors: Starting all sensors.
-2018-12-31 15:30:13,961 WARNING home_controller - start_sensors: No created sensors.
-2018-12-31 15:30:21,967 INFO devices - check_status_start: Bulb Zarowka from room bathroom information: level of consumption: 99.98, power consumption: 5.
-2018-12-31 15:30:21,967 INFO sql_controller - get_day_id: Try to select days
-2018-12-31 15:30:21,967 INFO sql_controller - get_day_id: Select from days done: (20, '2018-12-31')
-2018-12-31 15:30:21,969 INFO sql_controller - insert_into_light_bulb_status: Try to insert values: 99.98, 5 with params: lb_id: 6, d_id: 20.
-2018-12-31 15:30:21,973 INFO sql_controller - insert_into_light_bulb_status: Insert complete for lb_id: 6.
-2018-12-31 15:30:22,969 INFO devices - check_status_start: Pralka_KEK used 9 water
-2018-12-31 15:30:22,969 INFO sql_controller - get_day_id: Try to select days
-2018-12-31 15:30:22,970 INFO sql_controller - get_day_id: Select from days done: (20, '2018-12-31')
-2018-12-31 15:30:22,970 INFO sql_controller - insert_into_water_consumption: Try to insert value 9 with params: wd_id: 28 d_id: 20...
-2018-12-31 15:30:22,973 INFO sql_controller - insert_into_water_consumption: Insert complete for wd_id: 28.
-2018-12-31 15:30:31,973 INFO devices - check_status_start: Bulb Zarowka from room bathroom information: level of consumption: 99.97, power consumption: 5.
-2018-12-31 15:30:31,973 INFO sql_controller - get_day_id: Try to select days
-2018-12-31 15:30:31,974 INFO sql_controller - get_day_id: Select from days done: (20, '2018-12-31')
-2018-12-31 15:30:31,976 INFO sql_controller - insert_into_light_bulb_status: Try to insert values: 99.97, 5 with params: lb_id: 6, d_id: 20.
-2018-12-31 15:30:31,982 INFO sql_controller - insert_into_light_bulb_status: Insert complete for lb_id: 6.
-2018-12-31 15:30:32,976 INFO devices - check_status_start: Pralka_KEK used 5 water
-2018-12-31 15:30:32,976 INFO sql_controller - get_day_id: Try to select days
-2018-12-31 15:30:32,976 INFO sql_controller - get_day_id: Select from days done: (20, '2018-12-31')
-2018-12-31 15:30:32,976 INFO sql_controller - insert_into_water_consumption: Try to insert value 5 with params: wd_id: 28 d_id: 20...
-2018-12-31 15:30:32,983 INFO sql_controller - insert_into_water_consumption: Insert complete for wd_id: 28.
-2018-12-31 15:30:33,961 WARNING home_controller - stop_devises: Stopping all devices.
-2018-12-31 15:30:42,983 WARNING home_controller - stop_sensors: Stopping all sensors.
-2018-12-31 15:30:42,983 WARNING home_controller - stop_sensors: No created sensors, Nothing to stop.
-2018-12-31 15:30:42,983 WARNING home_controller - stop_day: Stop day.
-2018-12-31 15:31:06,953 WARNING home_controller - delete_device_by_name: try to delete device: Zarowka
-2018-12-31 15:31:06,953 WARNING home_controller - delete_device_by_name: Device: Zarowka removed
-2018-12-31 15:31:06,953 WARNING sql_controller - delete_device: Try to delete device: Zarowka from data base...
-2018-12-31 15:31:06,956 WARNING sql_controller - delete_device: Deletion complete.
-2018-12-31 15:31:06,956 WARNING home_controller - delete_device_by_name: try to delete device: Pralka_KEK
-2018-12-31 15:31:06,956 WARNING home_controller - delete_device_by_name: Device: Pralka_KEK removed
-2018-12-31 15:31:06,956 WARNING sql_controller - delete_device: Try to delete device: Pralka_KEK from data base...
-2018-12-31 15:31:06,960 WARNING sql_controller - delete_device: Deletion complete.
-2018-12-31 15:31:06,960 INFO connection - disconnect_from_db: Disconnect from DB
+2019-01-01 22:19:34,885 INFO home_controller - add_sensor: Create sensor SensorType.temperature_sensor.
+2019-01-01 22:19:34,885 INFO home_controller - add_sensor: Create sensor SensorType.humidity_sensor.
+2019-01-01 22:19:34,885 INFO home_controller - add_sensor: Create sensor SensorType.smoke_sensor.
+2019-01-01 22:19:34,885 INFO home_controller - add_light_bulb: Create light bulb.
+2019-01-01 22:19:34,885 INFO sql_controller - insert_into_light_bulbs: Try to insert new Light Bulb in room bathroom to table light_bulbs...
+2019-01-01 22:19:34,891 INFO sql_controller - insert_into_light_bulbs: Insert Complete. New Light Bulb with lb_id: 11 added.
+2019-01-01 22:19:34,891 INFO home_controller - add_power_socket: Create power socket with name Gniazdo1.
+2019-01-01 22:19:34,892 INFO sql_controller - insert_into_power_sockets: Try to insert new Power Socket Gniazdo1 in room bathroom to table power_sockets...
+2019-01-01 22:19:34,895 INFO sql_controller - insert_into_power_sockets: Insert Complete. New Power Socket with ps_is: 16 added.
+2019-01-01 22:19:34,895 INFO home_controller - add_water_device: Create water device with name Pralka_KEK.
+2019-01-01 22:19:34,895 INFO sql_controller - insert_into_water_devices: Try to insert new Water Device Pralka_KEK in room bathroom to table water_devices...
+2019-01-01 22:19:34,898 INFO sql_controller - insert_into_water_devices: Insert Complete. New Water Device with wd_id: 33 added.
+2019-01-01 22:19:34,898 WARNING home_controller - start_devises: Starting all devices.
+2019-01-01 22:19:34,900 INFO devices - check_status_start: Light bulb started in room bathroom.
+2019-01-01 22:19:34,900 INFO devices - check_status_start: Bulb Zarowka from room bathroom information: level of consumption: 99.99, power consumption: 5.
+2019-01-01 22:19:34,900 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:19:34,901 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:19:34,901 INFO sql_controller - insert_into_light_bulb_status: Try to insert values: 99.99, 5 with params: lb_id: 11, d_id: 44.
+2019-01-01 22:19:34,904 INFO sql_controller - insert_into_light_bulb_status: Insert complete for lb_id: 11.
+2019-01-01 22:19:35,900 INFO devices - check_status_start: Power socket Gniazdo1 started.
+2019-01-01 22:19:35,901 INFO devices - check_status_start: Gniazdo1 used 7 power
+2019-01-01 22:19:35,901 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:19:35,901 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:19:35,903 INFO sql_controller - insert_into_power_consumption: Try to insert value 7 with params: ps_id: 16, d_id: 44.
+2019-01-01 22:19:35,907 INFO sql_controller - insert_into_power_consumption: Insert complete for ps_id: 16
+2019-01-01 22:19:36,901 INFO devices - check_status_start: Water device Pralka_KEK started.
+2019-01-01 22:19:36,903 INFO devices - check_status_start: Pralka_KEK used 6 water
+2019-01-01 22:19:36,903 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:19:36,903 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:19:36,904 INFO sql_controller - insert_into_water_consumption: Try to insert value 6 with params: wd_id: 33 d_id: 44...
+2019-01-01 22:19:36,911 INFO sql_controller - insert_into_water_consumption: Insert complete for wd_id: 33.
+2019-01-01 22:19:37,903 WARNING home_controller - start_sensors: Starting all sensors.
+2019-01-01 22:19:37,903 INFO sensors - start_sensor: Current temperature 15.5499664224 in room bathroom.
+2019-01-01 22:19:37,904 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:19:37,904 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:19:37,905 INFO sql_controller - insert_into_sensor_table: Try to insert value: 15.5499664224 from sensor: temperature_sensor in room: bathroom...
+2019-01-01 22:19:37,911 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor temperature_sensor
+2019-01-01 22:19:38,903 INFO sensors - start_sensor: Current humidity 62.756093333 in room bathroom.
+2019-01-01 22:19:38,903 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:19:38,904 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:19:38,904 INFO sql_controller - insert_into_sensor_table: Try to insert value: 62.756093333 from sensor: humidity_sensor in room: bathroom...
+2019-01-01 22:19:38,911 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor humidity_sensor
+2019-01-01 22:19:39,904 INFO sensors - start_sensor: Current smoke level 0.861720375262 in room bathroom.
+2019-01-01 22:19:39,904 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:19:39,904 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:19:39,905 INFO sql_controller - insert_into_sensor_table: Try to insert value: 0.861720375262 from sensor: smoke_sensor in room: bathroom...
+2019-01-01 22:19:39,908 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor smoke_sensor
+2019-01-01 22:24:37,911 INFO sensors - start_sensor: Current temperature 21.4695223564 in room bathroom.
+2019-01-01 22:24:37,911 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:24:37,913 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:24:37,913 INFO sql_controller - insert_into_sensor_table: Try to insert value: 21.4695223564 from sensor: temperature_sensor in room: bathroom...
+2019-01-01 22:24:37,915 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor temperature_sensor
+2019-01-01 22:24:38,913 INFO sensors - start_sensor: Current humidity 68.4016128559 in room bathroom.
+2019-01-01 22:24:38,913 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:24:38,914 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:24:38,914 INFO sql_controller - insert_into_sensor_table: Try to insert value: 68.4016128559 from sensor: humidity_sensor in room: bathroom...
+2019-01-01 22:24:38,917 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor humidity_sensor
+2019-01-01 22:24:39,910 INFO sensors - start_sensor: Current smoke level 1.02041048769 in room bathroom.
+2019-01-01 22:24:39,910 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:24:39,924 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:24:39,924 INFO sql_controller - insert_into_sensor_table: Try to insert value: 1.02041048769 from sensor: smoke_sensor in room: bathroom...
+2019-01-01 22:24:39,928 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor smoke_sensor
+2019-01-01 22:42:51,326 INFO sensors - start_sensor: Current temperature 24.6983651725 in room bathroom.
+2019-01-01 22:42:51,326 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:42:51,328 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:42:51,328 INFO sql_controller - insert_into_sensor_table: Try to insert value: 24.6983651725 from sensor: temperature_sensor in room: bathroom...
+2019-01-01 22:42:51,332 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor temperature_sensor
+2019-01-01 22:42:52,328 INFO sensors - start_sensor: Current humidity 68.0010649975 in room bathroom.
+2019-01-01 22:42:52,328 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:42:52,328 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:42:52,328 INFO sql_controller - insert_into_sensor_table: Try to insert value: 68.0010649975 from sensor: humidity_sensor in room: bathroom...
+2019-01-01 22:42:52,334 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor humidity_sensor
+2019-01-01 22:42:53,338 INFO sensors - start_sensor: Current smoke level 0.932808570368 in room bathroom.
+2019-01-01 22:42:53,338 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:42:53,339 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:42:53,341 INFO sql_controller - insert_into_sensor_table: Try to insert value: 0.932808570368 from sensor: smoke_sensor in room: bathroom...
+2019-01-01 22:42:53,345 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor smoke_sensor
+2019-01-01 22:47:51,334 INFO sensors - start_sensor: Current temperature 17.5542862521 in room bathroom.
+2019-01-01 22:47:51,334 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:47:51,335 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:47:51,335 INFO sql_controller - insert_into_sensor_table: Try to insert value: 17.5542862521 from sensor: temperature_sensor in room: bathroom...
+2019-01-01 22:47:51,338 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor temperature_sensor
+2019-01-01 22:47:52,334 INFO sensors - start_sensor: Current humidity 56.2647540301 in room bathroom.
+2019-01-01 22:47:52,334 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:47:52,335 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:47:52,335 INFO sql_controller - insert_into_sensor_table: Try to insert value: 56.2647540301 from sensor: humidity_sensor in room: bathroom...
+2019-01-01 22:47:52,338 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor humidity_sensor
+2019-01-01 22:47:53,346 INFO sensors - start_sensor: Current smoke level 1.18923916105 in room bathroom.
+2019-01-01 22:47:53,346 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:47:53,348 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:47:53,348 INFO sql_controller - insert_into_sensor_table: Try to insert value: 1.18923916105 from sensor: smoke_sensor in room: bathroom...
+2019-01-01 22:47:53,352 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor smoke_sensor
+2019-01-01 22:52:51,339 INFO sensors - start_sensor: Current temperature 19.8405597597 in room bathroom.
+2019-01-01 22:52:51,339 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:52:51,341 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:52:51,342 INFO sql_controller - insert_into_sensor_table: Try to insert value: 19.8405597597 from sensor: temperature_sensor in room: bathroom...
+2019-01-01 22:52:51,345 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor temperature_sensor
+2019-01-01 22:52:52,338 INFO sensors - start_sensor: Current humidity 65.1012713019 in room bathroom.
+2019-01-01 22:52:52,338 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:52:52,339 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:52:52,341 INFO sql_controller - insert_into_sensor_table: Try to insert value: 65.1012713019 from sensor: humidity_sensor in room: bathroom...
+2019-01-01 22:52:52,344 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor humidity_sensor
+2019-01-01 22:52:53,354 INFO sensors - start_sensor: Current smoke level 1.06088544123 in room bathroom.
+2019-01-01 22:52:53,354 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:52:53,355 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:52:53,355 INFO sql_controller - insert_into_sensor_table: Try to insert value: 1.06088544123 from sensor: smoke_sensor in room: bathroom...
+2019-01-01 22:52:53,359 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor smoke_sensor
+2019-01-01 22:57:51,348 INFO sensors - start_sensor: Current temperature 21.3190866124 in room bathroom.
+2019-01-01 22:57:51,348 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:57:51,361 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:57:51,375 INFO sql_controller - insert_into_sensor_table: Try to insert value: 21.3190866124 from sensor: temperature_sensor in room: bathroom...
+2019-01-01 22:57:51,384 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor temperature_sensor
+2019-01-01 22:57:52,345 INFO sensors - start_sensor: Current humidity 80.6135680919 in room bathroom.
+2019-01-01 22:57:52,345 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:57:52,346 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:57:52,346 INFO sql_controller - insert_into_sensor_table: Try to insert value: 80.6135680919 from sensor: humidity_sensor in room: bathroom...
+2019-01-01 22:57:52,349 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor humidity_sensor
+2019-01-01 22:57:53,359 INFO sensors - start_sensor: Current smoke level 0.980011555469 in room bathroom.
+2019-01-01 22:57:53,359 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 22:57:53,361 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 22:57:53,361 INFO sql_controller - insert_into_sensor_table: Try to insert value: 0.980011555469 from sensor: smoke_sensor in room: bathroom...
+2019-01-01 22:57:53,365 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor smoke_sensor
+2019-01-01 23:02:51,387 INFO sensors - start_sensor: Current temperature 23.6574620482 in room bathroom.
+2019-01-01 23:02:51,387 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 23:02:51,390 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 23:02:51,391 INFO sql_controller - insert_into_sensor_table: Try to insert value: 23.6574620482 from sensor: temperature_sensor in room: bathroom...
+2019-01-01 23:02:51,394 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor temperature_sensor
+2019-01-01 23:02:52,351 INFO sensors - start_sensor: Current humidity 62.2525155402 in room bathroom.
+2019-01-01 23:02:52,351 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 23:02:52,351 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 23:02:52,352 INFO sql_controller - insert_into_sensor_table: Try to insert value: 62.2525155402 from sensor: humidity_sensor in room: bathroom...
+2019-01-01 23:02:52,355 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor humidity_sensor
+2019-01-01 23:02:53,367 INFO sensors - start_sensor: Current smoke level 0.602371098304 in room bathroom.
+2019-01-01 23:02:53,367 INFO sql_controller - get_day_id: Try to select days
+2019-01-01 23:02:53,368 INFO sql_controller - get_day_id: Select from days done: (44, '2019-01-01')
+2019-01-01 23:02:53,368 INFO sql_controller - insert_into_sensor_table: Try to insert value: 0.602371098304 from sensor: smoke_sensor in room: bathroom...
+2019-01-01 23:02:53,375 INFO sql_controller - insert_into_sensor_table: Insert complete for sensor smoke_sensor

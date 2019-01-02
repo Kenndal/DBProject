@@ -30,7 +30,7 @@ class TemperatureSensor(Sensor):
                 _time = time.ctime()[-13:-5]
                 self.logger.info("Current temperature {} in room {}.".format(value, self.room.name))
                 self.sql_controller.insert_into_sensor_table(self.room, value, _time, self.sensor_type)
-                time.sleep(30)
+                time.sleep(300)
             else:
                 return
 
@@ -47,7 +47,7 @@ class HumilitySensor(Sensor):
                 _time = time.ctime()[-13:-5]
                 self.logger.info("Current humidity {} in room {}.".format(value, self.room.name))
                 self.sql_controller.insert_into_sensor_table(self.room, value, _time, self.sensor_type)
-                time.sleep(30)
+                time.sleep(300)
             else:
                 return
 
@@ -64,7 +64,7 @@ class SmokeSensor(Sensor):
                 _time = time.ctime()[-13:-5]
                 self.logger.info("Current smoke level {} in room {}.".format(value, self.room.name))
                 self.sql_controller.insert_into_sensor_table(self.room, value, _time, self.sensor_type)
-                time.sleep(30)
+                time.sleep(300)
             else:
                 return
 

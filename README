@@ -1,1 +1,3 @@
 Only water devices and light bulbs can be remove.
+Rooms can not be removed. Hardcoded in data base.
+Plugging and unplugging devices is not supported.
