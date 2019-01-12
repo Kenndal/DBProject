@@ -2,7 +2,6 @@ import time
 from datetime import datetime
 
 import psycopg2
-
 from psql.connection import connect_to_db, disconnect_from_db
 from simulators.enum import SensorType
 
@@ -175,9 +174,72 @@ class SqlController:
         try:
             self.logger.warn("Try to delete device: {} from data base...".format(name))
             self.cursor.execute(sql[0], (name,))
-            self.cursor.execute(sql[0], (name,))
+            self.cursor.execute(sql[1], (name,))
             self.connection.commit()
             self.logger.warn("Deletion complete.")
         except (Exception, psycopg2.DatabaseError) as error:
             self.connection.rollback()
             self.logger.fatal(error)
+
+    def check_water_device(self, name):
+        _id = None
+        sql = """select wd_id from water_devices where name = %s;"""
+
+        try:
+            self.logger.info("Checking if device {} exist in database.".format(name))
+            self.cursor.execute(sql, (name,))
+            self.logger.info("KEK")
+            _id = self.cursor.fetchone()
+            self.logger.info(_id)
+            self.connection.commit()
+            if _id is not None:
+                self.logger.info("Device {} exist in database.".format(name))
+                return _id[0]
+            else:
+                self.logger.info("Device {} doesnt exist in database.".format(name))
+                return _id
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return _id
+
+    def check_power_socket(self, name):
+        _id = None
+        sql = """select ps_id from power_sockets where name = %s;"""
+
+        try:
+            self.logger.info("Checking if device {} exist in database.".format(name))
+            self.cursor.execute(sql, (name,))
+            _id = self.cursor.fetchone()
+            self.logger.info(_id)
+            self.connection.commit()
+            if _id is not None:
+                self.logger.info("Device {} exist in database.".format(name))
+                return _id[0]
+            else:
+                self.logger.info("Device {} doesnt exist in database.".format(name))
+                return _id
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return _id
+
+    def check_light_bulb(self, name):
+        _id = None
+        sql = """select lb_id from light_bulbs where name = %s;"""
+        try:
+            self.logger.info("Checking if device {} exist in database.".format(name))
+            self.cursor.execute(sql, (name,))
+            _id = self.cursor.fetchone()
+            self.logger.info(_id)
+            self.connection.commit()
+            if _id is not None:
+                self.logger.info("Device {} exist in database.".format(name))
+                return _id[0]
+            else:
+                self.logger.info("Device {} doesnt exist in database.".format(name))
+                return _id
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return _id

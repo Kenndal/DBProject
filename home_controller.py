@@ -1,3 +1,5 @@
+import json
+import pickle
 import threading
 from time import sleep
 
@@ -35,35 +37,50 @@ class HomeController:
     def add_water_device(self, name, _type, brand, room):
         self.logger.info("Create water device with name {}.".format(name))
         water_device = WaterDevice(name, _type, brand, room, self.sql_controller, self.logger, self.flag)
-        wd_id = self.sql_controller.insert_into_water_devices(water_device)
-        if wd_id is not None:
+        wd_id = self.sql_controller.check_water_device(name)
+        if wd_id is None:
+            wd_id = self.sql_controller.insert_into_water_devices(water_device)
+            if wd_id is not None:
+                water_device.wd_id = wd_id
+                self.device_list.append(water_device)
+            else:
+                self.logger.warn("Removing {}".format(water_device.name))
+                del water_device
+        else:
             water_device.wd_id = wd_id
             self.device_list.append(water_device)
-        else:
-            self.logger.warn("Removing {}".format(water_device.name))
-            del water_device
 
     def add_power_socket(self, name, room, ):
         self.logger.info("Create power socket with name {}.".format(name))
         power_socket = PowerSocket(name, room, self.sql_controller, self.logger, self.flag)
-        ps_id = self.sql_controller.insert_into_power_sockets(power_socket)
-        if ps_id is not None:
+        ps_id = self.sql_controller.check_power_socket(name)
+        if ps_id is None:
+            ps_id = self.sql_controller.insert_into_power_sockets(power_socket)
+            if ps_id is not None:
+                power_socket.ps_id = ps_id
+                self.device_list.append(power_socket)
+            else:
+                self.logger.warn("Removing {}".format(power_socket.name))
+                del power_socket
+        else:
             power_socket.ps_id = ps_id
             self.device_list.append(power_socket)
-        else:
-            self.logger.warn("Removing {}".format(power_socket.name))
-            del power_socket
 
     def add_light_bulb(self, name, _type, brand, room):
         self.logger.info("Create light bulb.")
         light_bulb = LightBulb(name, _type, brand, room, self.sql_controller, self.logger, self.flag)
-        lb_id = self.sql_controller.insert_into_light_bulbs(light_bulb)
-        if lb_id is not None:
+        lb_id = self.sql_controller.check_light_bulb(name)
+        if lb_id is None:
+            lb_id = self.sql_controller.insert_into_light_bulbs(light_bulb)
+            if lb_id is not None:
+                light_bulb.lb_id = lb_id
+                self.device_list.append(light_bulb)
+            else:
+                self.logger.warn("Removing {}".format(light_bulb.name))
+                del light_bulb
+        else:
             light_bulb.lb_id = lb_id
             self.device_list.append(light_bulb)
-        else:
-            self.logger.warn("Removing {}".format(light_bulb.name))
-            del light_bulb
 
     def add_sensor(self, sensor_type, room):
         self.logger.info("Create sensor {}.".format(sensor_type))
