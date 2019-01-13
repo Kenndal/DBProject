@@ -40,11 +40,13 @@ class SqlController:
         try:
             self.logger.info("Try to select days")
             self.cursor.execute(sql)
-            select = self.cursor.fetchall()[-1]
-            d_date = select[1]
+            select = self.cursor.fetchall()
             self.logger.info("Select from days done: " + str(select))
-            self.connection.commit()
-            return d_date
+            if select:
+                self.connection.commit()
+                return select[-1][1]
+            else:
+                return None
 
         except (Exception, psycopg2.DatabaseError) as error:
             self.connection.rollback()

@@ -13,7 +13,7 @@ class Day:
 
     def start(self):
         self.logger.info("Starting counting time in day instance.")
-        if self.sql_controller == str(datetime.now())[:10]:
+        if self.sql_controller.get_day_date() != str(datetime.now())[:10]:
             self.get_new_id()
             while True:
                 if self.flag:
