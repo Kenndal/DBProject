@@ -13,18 +13,21 @@ class Day:
 
     def start(self):
         self.logger.info("Starting counting time in day instance.")
-        self.get_new_id()
-        while True:
-            if self.flag:
-                if "00:00" in str(time.ctime()):
-                    self.get_new_id()
-                time.sleep(60)
-            else:
-                return
+        if self.sql_controller == str(datetime.now())[:10]:
+            self.get_new_id()
+            while True:
+                if self.flag:
+                    if "00:00" in str(time.ctime()):
+                        self.get_new_id()
+                    time.sleep(60)
+                else:
+                    return
+        else:
+            self.logger.info("Day with date {} exist in database".format(str(datetime.now())[:10]))
 
     def get_new_id(self):
         temp = self.sql_controller.new_day()
         self.d_id = temp
-        self.date = str(datetime.now())[:9]
+        self.date = str(datetime.now())[:10]
 
 

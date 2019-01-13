@@ -22,7 +22,7 @@ class SqlController:
         disconnect_from_db(self.cursor, self.logger)
 
     def get_day_id(self):
-        sql = """select * from days;"""
+        sql = """select * from days order by d_id;"""
         try:
             self.logger.info("Try to select days")
             self.cursor.execute(sql)
@@ -34,6 +34,22 @@ class SqlController:
         except (Exception, psycopg2.DatabaseError) as error:
             self.connection.rollback()
             self.logger.fatal(error)
+
+    def get_day_date(self):
+        sql = """select * from days order by d_id;"""
+        try:
+            self.logger.info("Try to select days")
+            self.cursor.execute(sql)
+            select = self.cursor.fetchall()[-1]
+            d_date = select[1]
+            self.logger.info("Select from days done: " + str(select))
+            self.connection.commit()
+            return d_date
+
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
 
     def new_day(self):
         sql = """insert into days(date) values (%s) RETURNING d_id"""
