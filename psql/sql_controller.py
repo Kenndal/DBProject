@@ -259,3 +259,17 @@ class SqlController:
             self.connection.rollback()
             self.logger.fatal(error)
             return _id
+
+    def get_bulb_level_of_consumption(self, lb_id):
+        sql = """select level_of_consumption from light_bulb_status where lb_id = %s order by level_of_consumption;"""
+
+        try:
+            self.logger.info("Getting light bulb status...")
+            self.cursor.execute(sql, (lb_id,))
+            status = self.cursor.fetchall()[-1][0]
+            self.connection.commit()
+            return status
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
