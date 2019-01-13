@@ -1,0 +1,211 @@
+{% extends "basic.html" %}
+{% block title %} {{ info.room_name}} Information {% endblock %}
+{% block content %}
+<!-- Room Information -->
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card mb-3">
+        <div class="card-header">
+          Light Bulb status in {{ info.room_name }}
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="bulbTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Brand</th>
+                  <th>Level of consumption</th>
+                  <th>Power used in last hour</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for value in info.light_bulbs_status %}
+                <tr>
+                  <td>{{ value.name }}</td>
+                  <td>{{ value.type }}</td>
+                  <td>{{ value.brand }}</td>
+                  <td>{{ value.level_of_consumption }}</td>
+                  <td>{{ value.power_consumption }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+    </div>
+  </div>
+    <div class="col-lg-6">
+    <div class="card mb-3">
+        <div class="card-header">
+          Light Bulb status in {{ info.room_name }}
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="socketTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Power used in last hour</th>
+                </tr>
+              </thead>
+              <tbody>
+              {% for value in info.power_sockets_status %}
+                <tr>
+                  <td>{{ value.name }}</td>
+                  <td>{{ value.power_consumption }}</td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+    </div>
+  </div>
+</div>
+<!-- Temperature  -->
+<div class="row">
+<div class="col-lg-8">
+  <div class="card mb-3">
+    <div class="card-header">
+      Temperature in {{ info.room_name }}</div>
+    <div class="card-body">
+      <canvas id="temperatureChart" width="100%" height="30"></canvas>
+    </div>
+    <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+  </div>
+</div>
+<div class="col-lg-4">
+  <div class="card mb-3">
+      <div class="card-header">
+        Temperature in {{ info.room_name }}
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Time</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for value in info.temperature_table %}
+              <tr>
+                <td>{{ value.time }}</td>
+                <td>{{ value.data }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+  </div>
+</div>
+
+</div>
+
+<!-- Humidity  -->
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card mb-3">
+      <div class="card-header">
+        Humidity in {{ info.room_name }}</div>
+      <div class="card-body">
+        <canvas id="humidityChart" width="100%" height="30"></canvas>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card mb-3">
+        <div class="card-header">
+          Humidity in {{ info.room_name }}
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable2" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for value in info.humidity_table %}
+                  <tr>
+                    <td>{{ value.time }}</td>
+                    <td>{{ value.data }}</td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Humidity  -->
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card mb-3">
+      <div class="card-header">
+        Smoke in {{ info.room_name }}</div>
+      <div class="card-body">
+        <canvas id="smokeChart" width="100%" height="30"></canvas>
+      </div>
+      <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="card mb-3">
+        <div class="card-header">
+          Smoke in {{ info.room_name }}
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable3" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for value in info.smoke_table %}
+                  <tr>
+                    <td>{{ value.time }}</td>
+                    <td>{{ value.data }}</td>
+                  </tr>
+                {% endfor %}
+            </tbody>
+            </table>
+          </div>
+        </div>
+      <div class="card-footer small text-muted">Updated yesterday at {{ info.time }}</div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="../static/js/Chart.min.js"></script>
+<script type="text/javascript">
+  var temperature_label = {{ info.temperature_time }}
+  var temperature_data = {{ info.temperature_data }}
+  var humidity_data = {{ info.humidity_data }}
+  var humidity_label = {{ info.humidity_time }}
+  var smoke_label = {{ info.smoke_time}}
+  var smoke_data = {{ info.smoke_data}}
+</script>
+<script src="../static/js/chart-temperature.js"></script>
+<script src="../static/js/chart-humiditi.js"></script>
+<script src="../static/js/chart-smoke.js"></script>
+{% endblock %}

@@ -2,12 +2,12 @@ import psycopg2
 from config import config
 
 
-def connect_to_db(logger):
+def connect_to_db(logger, filename='psql/database.ini'):
     """ Connect to the PostgreSQL database server """
     conn = None
     try:
         # read connection parameters
-        params = config()
+        params = config(filename)
 
         # connect to the PostgreSQL server
         logger.info('Connecting to the PostgreSQL database...')

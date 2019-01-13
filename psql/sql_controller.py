@@ -15,8 +15,8 @@ class SqlController:
 
         self.logger.info("Created psql controller.")
 
-    def connect(self):
-        self.connection, self.cursor = connect_to_db(self.logger)
+    def connect(self, filename='psql/database.ini'):
+        self.connection, self.cursor = connect_to_db(self.logger, filename)
 
     def disconnect(self):
         disconnect_from_db(self.cursor, self.logger)
@@ -271,6 +271,109 @@ class SqlController:
             status = self.cursor.fetchall()[-1][0]
             self.connection.commit()
             return status
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def get_temperature(self, room_id):
+        sql = """select value, time from temperature where d_id = %s and r_id = %s;"""
+
+        try:
+            self.get_day_id()
+            self.logger.info("Getting data from temperature...")
+            self.cursor.execute(sql, (self.d_id, room_id))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def get_humidity(self, room_id):
+        sql = """select value, time from humidity where d_id = %s and r_id = %s;"""
+
+        try:
+            self.get_day_id()
+            self.logger.info("Getting data from humidity...")
+            self.cursor.execute(sql, (self.d_id, room_id))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def get_smoke(self, room_id):
+        sql = """select value, time from smoke where d_id = %s and r_id = %s;"""
+
+        try:
+            self.get_day_id()
+            self.logger.info("Getting data from smoke...")
+            self.cursor.execute(sql, (self.d_id, room_id))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def get_all_bulbs_from_room(self, room):
+        sql = """select * from light_bulbs where r_id = %s;"""
+
+        try:
+            self.logger.info("Getting all light bulbs from room {}...".format(room.name))
+            self.cursor.execute(sql, (room.value, ))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def get_light_bulb_status(self, lb_id):
+        sql = """select * from light_bulb_status where d_id = %s and lb_id = %s order by time;"""
+
+        try:
+            self.get_day_id()
+            self.logger.info("Getting light bulb {} status ".format(lb_id))
+            self.cursor.execute(sql, (self.d_id, lb_id))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def get_power_sockets_from_room(self, room):
+        sql = """select * from power_sockets where r_id = %s;"""
+
+        try:
+            self.logger.info("Getting all power sockets from room {}".format(room.name))
+            self.cursor.execute(sql, (room.value, ))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def get_power_sockets_status(self, ps_id):
+        sql = """select * from power_consumption where d_id =%s and ps_id = %s order by time;"""
+
+        try:
+            self.get_day_id()
+            self.logger.info("Getting power socket {} consumption...".format(ps_id))
+            self.cursor.execute(sql, (self.d_id, ps_id))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
         except (Exception, psycopg2.DatabaseError) as error:
             self.connection.rollback()
             self.logger.fatal(error)
