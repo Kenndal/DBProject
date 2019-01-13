@@ -80,7 +80,8 @@ class HomeController:
                 del light_bulb
         else:
             light_bulb.lb_id = lb_id
-            light_bulb.level_of_consumption = self.sql_controller.get_bulb_level_of_consumption(lb_id)
+            level_of_consumption = self.sql_controller.get_bulb_level_of_consumption(lb_id)
+            light_bulb.level_of_consumption = level_of_consumption if level_of_consumption is not None else 100
             self.device_list.append(light_bulb)
 
     def add_sensor(self, sensor_type, room):
