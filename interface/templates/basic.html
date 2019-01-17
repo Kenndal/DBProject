@@ -24,7 +24,9 @@
 
   <body id="page-top">
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-      <a class="navbar-brand mr-1" href="home" style="color: #c82333">Home Controller</a>
+        <a class="navbar-brand mr-1" href="home" style="color: #c82333">Home Controller     </a>
+        <a class="navbar-brand mr-1" style="color: #20c997">{% block name %}{% endblock %}</a>
+        <a class="navbar-brand mr-1" href="logout" style="color: gold">    LogOut</a>
     </nav>
 
     <div id="wrapper">
@@ -47,9 +49,12 @@
                 <a class="dropdown-item" href="living_room">Living Room</a>
                 <a class="dropdown-item" href="bathroom">Bathroom</a>
                 <a class="dropdown-item" href="corridor">Corridor</a>
-            <h6 class="dropdown-header">Devices</h6>
-                <a class="dropdown-item" href="TBD">TBD</a>
           </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="users">
+            <span>Users</span>
+          </a>
         </li>
       </ul>
 
@@ -62,7 +67,7 @@
             <footer class="sticky-footer">
               <div class="container my-auto">
                 <div class="copyright text-center my-auto">
-                  <span>Copyright © Your Website 2018</span>
+                  <span>Copyright © Your Website 2019</span>
                 </div>
               </div>
             </footer>

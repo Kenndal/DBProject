@@ -5,8 +5,8 @@
       <ServerVersion>10.6</ServerVersion>
     </root>
     <database id="2" parent="1" name="homeIOT">
-      <ObjectId>16423</ObjectId>
-      <StateNumber>572</StateNumber>
+      <ObjectId>40960</ObjectId>
+      <StateNumber>2907</StateNumber>
       <Owner>kenndal</Owner>
       <IntrospectionStateNumber>505</IntrospectionStateNumber>
       <Current>1</Current>
@@ -89,8 +89,8 @@
       <Comment>standard public schema</Comment>
       <StateNumber>351</StateNumber>
       <Owner>postgres</Owner>
-      <IntrospectionTimestamp>2019-01-12.12:41:11.217</IntrospectionTimestamp>
-      <IntrospectionStateNumber>1546</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2019-01-17.18:36:27.181</IntrospectionTimestamp>
+      <IntrospectionStateNumber>8729</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -151,493 +151,552 @@
       <SchemaId>11</SchemaId>
     </extension>
     <sequence id="23" parent="15" name="bulbs_seq">
-      <ObjectId>24700</ObjectId>
+      <ObjectId>41015</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>779</StateNumber>
+      <StateNumber>2921</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <sequence id="24" parent="15" name="day_seq">
-      <ObjectId>24620</ObjectId>
+      <ObjectId>40961</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>647</StateNumber>
+      <StateNumber>2908</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <sequence id="25" parent="15" name="rooms_seq">
-      <ObjectId>24606</ObjectId>
+      <ObjectId>40969</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>629</StateNumber>
+      <StateNumber>2910</StateNumber>
       <SequenceIdentity>1..16</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
     <sequence id="26" parent="15" name="sockets_seq">
-      <ObjectId>24686</ObjectId>
+      <ObjectId>41004</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>729</StateNumber>
+      <StateNumber>2918</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <sequence id="27" parent="15" name="water_d_seq">
-      <ObjectId>24626</ObjectId>
+    <sequence id="27" parent="15" name="user_seq">
+      <ObjectId>41041</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>652</StateNumber>
+      <StateNumber>8728</StateNumber>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>1</CacheSize>
       <DataType>bigint</DataType>
     </sequence>
-    <table id="28" parent="15" name="days">
-      <ObjectId>24672</ObjectId>
+    <sequence id="28" parent="15" name="water_d_seq">
+      <ObjectId>40986</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>679</StateNumber>
-    </table>
-    <table id="29" parent="15" name="humidity">
-      <ObjectId>32774</ObjectId>
+      <StateNumber>2915</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>bigint</DataType>
+    </sequence>
+    <table id="29" parent="15" name="days">
+      <ObjectId>40963</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>1411</StateNumber>
+      <StateNumber>2909</StateNumber>
     </table>
-    <table id="30" parent="15" name="light_bulb_status">
-      <ObjectId>24718</ObjectId>
+    <table id="30" parent="15" name="humidity">
+      <ObjectId>40980</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>790</StateNumber>
+      <StateNumber>2913</StateNumber>
     </table>
-    <table id="31" parent="15" name="light_bulbs">
-      <ObjectId>24702</ObjectId>
+    <table id="31" parent="15" name="light_bulb_status">
+      <ObjectId>41025</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>790</StateNumber>
+      <StateNumber>2923</StateNumber>
     </table>
-    <table id="32" parent="15" name="power_consumption">
-      <ObjectId>32786</ObjectId>
+    <table id="32" parent="15" name="light_bulbs">
+      <ObjectId>41017</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>1546</StateNumber>
+      <StateNumber>2923</StateNumber>
     </table>
-    <table id="33" parent="15" name="power_sockets">
-      <ObjectId>24691</ObjectId>
+    <table id="33" parent="15" name="power_consumption">
+      <ObjectId>41012</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>731</StateNumber>
+      <StateNumber>2920</StateNumber>
     </table>
-    <table id="34" parent="15" name="rooms">
-      <ObjectId>24608</ObjectId>
+    <table id="34" parent="15" name="power_sockets">
+      <ObjectId>41006</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>630</StateNumber>
+      <StateNumber>2919</StateNumber>
     </table>
-    <table id="35" parent="15" name="smoke">
-      <ObjectId>32777</ObjectId>
+    <table id="35" parent="15" name="rooms">
+      <ObjectId>40971</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>1413</StateNumber>
+      <StateNumber>2911</StateNumber>
     </table>
-    <table id="36" parent="15" name="temperature">
-      <ObjectId>32771</ObjectId>
+    <table id="36" parent="15" name="smoke">
+      <ObjectId>40983</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>1409</StateNumber>
+      <StateNumber>2914</StateNumber>
     </table>
-    <table id="37" parent="15" name="water_consumption">
-      <ObjectId>24652</ObjectId>
+    <table id="37" parent="15" name="temperature">
+      <ObjectId>40977</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>660</StateNumber>
+      <StateNumber>2912</StateNumber>
     </table>
-    <table id="38" parent="15" name="water_devices">
-      <ObjectId>24628</ObjectId>
+    <table id="38" parent="15" name="users">
+      <ObjectId>41043</ObjectId>
       <Owner>kenndal</Owner>
-      <StateNumber>660</StateNumber>
+      <StateNumber>8729</StateNumber>
     </table>
-    <column id="39" parent="28" name="d_id">
+    <table id="39" parent="15" name="water_consumption">
+      <ObjectId>40996</ObjectId>
+      <Owner>kenndal</Owner>
+      <StateNumber>2917</StateNumber>
+    </table>
+    <table id="40" parent="15" name="water_devices">
+      <ObjectId>40988</ObjectId>
+      <Owner>kenndal</Owner>
+      <StateNumber>2917</StateNumber>
+    </table>
+    <column id="41" parent="29" name="d_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>679</StateNumber>
+      <StateNumber>2909</StateNumber>
       <DefaultExpression>nextval(&apos;day_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="40" parent="28" name="date">
+    <column id="42" parent="29" name="date">
       <Position>2</Position>
       <DataType>char(10)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>679</StateNumber>
+      <StateNumber>2909</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <index id="41" parent="28" name="days_date_key">
-      <ObjectId>24676</ObjectId>
-      <StateNumber>679</StateNumber>
+    <index id="43" parent="29" name="days_date_key">
+      <ObjectId>40967</ObjectId>
+      <StateNumber>2909</StateNumber>
       <ColNames>date</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="42" parent="28" name="days_date_key">
-      <ObjectId>24677</ObjectId>
-      <StateNumber>679</StateNumber>
+    <key id="44" parent="29" name="days_date_key">
+      <ObjectId>40968</ObjectId>
+      <StateNumber>2909</StateNumber>
       <ColNames>date</ColNames>
       <UnderlyingIndexName>days_date_key</UnderlyingIndexName>
     </key>
-    <column id="43" parent="29" name="r_id">
+    <column id="45" parent="30" name="r_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1411</StateNumber>
+      <StateNumber>2913</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="44" parent="29" name="d_id">
+    <column id="46" parent="30" name="d_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1411</StateNumber>
+      <StateNumber>2913</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="45" parent="29" name="time">
+    <column id="47" parent="30" name="time">
       <Position>3</Position>
       <DataType>char(16)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1411</StateNumber>
+      <StateNumber>2913</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="46" parent="29" name="value">
+    <column id="48" parent="30" name="value">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>1411</StateNumber>
+      <StateNumber>2913</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="47" parent="30" name="lb_id">
+    <column id="49" parent="31" name="lb_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>790</StateNumber>
+      <StateNumber>2923</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="48" parent="30" name="d_id">
+    <column id="50" parent="31" name="d_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>790</StateNumber>
+      <StateNumber>2923</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="49" parent="30" name="level_of_consumption">
+    <column id="51" parent="31" name="level_of_consumption">
       <Position>3</Position>
       <DataType>real|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>790</StateNumber>
+      <StateNumber>2923</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="50" parent="30" name="power_consumption">
+    <column id="52" parent="31" name="power_consumption">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>790</StateNumber>
+      <StateNumber>2923</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="51" parent="30" name="time">
+    <column id="53" parent="31" name="time">
       <Position>5</Position>
       <DataType>char(16)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>790</StateNumber>
+      <StateNumber>2923</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <foreign-key id="52" parent="30" name="light_bulb_status_lb_id_fkey">
-      <ObjectId>24721</ObjectId>
-      <StateNumber>790</StateNumber>
+    <foreign-key id="54" parent="31" name="light_bulb_status_lb_id_fkey">
+      <ObjectId>41028</ObjectId>
+      <StateNumber>2923</StateNumber>
       <ColNames>lb_id</ColNames>
-      <RefTableId>24702</RefTableId>
+      <RefTableId>41017</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>light_bulbs</RefTableName>
       <RefKeyName>light_bulbs_pkey</RefKeyName>
       <RefColNames>lb_id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="53" parent="31" name="lb_id">
+    <column id="55" parent="32" name="lb_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>780</StateNumber>
+      <StateNumber>2922</StateNumber>
       <DefaultExpression>nextval(&apos;bulbs_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="54" parent="31" name="r_id">
+    <column id="56" parent="32" name="r_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>780</StateNumber>
+      <StateNumber>2922</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="55" parent="31" name="name">
+    <column id="57" parent="32" name="name">
       <Position>3</Position>
       <DataType>char(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>780</StateNumber>
+      <StateNumber>2922</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="56" parent="31" name="type">
+    <column id="58" parent="32" name="type">
       <Position>4</Position>
       <DataType>char(30)|0s</DataType>
-      <StateNumber>780</StateNumber>
+      <StateNumber>2922</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="57" parent="31" name="brand">
+    <column id="59" parent="32" name="brand">
       <Position>5</Position>
       <DataType>char(30)|0s</DataType>
-      <StateNumber>780</StateNumber>
+      <StateNumber>2922</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <index id="58" parent="31" name="light_bulbs_pkey">
-      <ObjectId>24706</ObjectId>
-      <StateNumber>780</StateNumber>
+    <index id="60" parent="32" name="light_bulbs_pkey">
+      <ObjectId>41021</ObjectId>
+      <StateNumber>2922</StateNumber>
       <ColNames>lb_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="59" parent="31" name="light_bulbs_name_key">
-      <ObjectId>24708</ObjectId>
-      <StateNumber>780</StateNumber>
+    <index id="61" parent="32" name="light_bulbs_name_key">
+      <ObjectId>41023</ObjectId>
+      <StateNumber>2922</StateNumber>
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="60" parent="31" name="light_bulbs_pkey">
-      <ObjectId>24707</ObjectId>
-      <StateNumber>780</StateNumber>
+    <key id="62" parent="32" name="light_bulbs_pkey">
+      <ObjectId>41022</ObjectId>
+      <StateNumber>2922</StateNumber>
       <ColNames>lb_id</ColNames>
       <UnderlyingIndexName>light_bulbs_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="61" parent="31" name="light_bulbs_name_key">
-      <ObjectId>24709</ObjectId>
-      <StateNumber>780</StateNumber>
+    <key id="63" parent="32" name="light_bulbs_name_key">
+      <ObjectId>41024</ObjectId>
+      <StateNumber>2922</StateNumber>
       <ColNames>name</ColNames>
       <UnderlyingIndexName>light_bulbs_name_key</UnderlyingIndexName>
     </key>
-    <column id="62" parent="32" name="ps_id">
+    <column id="64" parent="33" name="ps_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1546</StateNumber>
+      <StateNumber>2920</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="63" parent="32" name="d_id">
+    <column id="65" parent="33" name="d_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1546</StateNumber>
+      <StateNumber>2920</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="64" parent="32" name="value">
+    <column id="66" parent="33" name="value">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>1546</StateNumber>
+      <StateNumber>2920</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="65" parent="32" name="time">
+    <column id="67" parent="33" name="time">
       <Position>4</Position>
       <DataType>char(16)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1546</StateNumber>
+      <StateNumber>2920</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="66" parent="33" name="ps_id">
+    <column id="68" parent="34" name="ps_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>731</StateNumber>
+      <StateNumber>2919</StateNumber>
       <DefaultExpression>nextval(&apos;sockets_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="67" parent="33" name="r_id">
+    <column id="69" parent="34" name="r_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>731</StateNumber>
+      <StateNumber>2919</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="68" parent="33" name="name">
+    <column id="70" parent="34" name="name">
       <Position>3</Position>
       <DataType>char(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>731</StateNumber>
+      <StateNumber>2919</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <index id="69" parent="33" name="power_sockets_pkey">
-      <ObjectId>24695</ObjectId>
-      <StateNumber>731</StateNumber>
+    <index id="71" parent="34" name="power_sockets_pkey">
+      <ObjectId>41010</ObjectId>
+      <StateNumber>2919</StateNumber>
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="70" parent="33" name="power_sockets_pkey">
-      <ObjectId>24696</ObjectId>
-      <StateNumber>731</StateNumber>
+    <key id="72" parent="34" name="power_sockets_pkey">
+      <ObjectId>41011</ObjectId>
+      <StateNumber>2919</StateNumber>
       <ColNames>name</ColNames>
       <UnderlyingIndexName>power_sockets_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="71" parent="34" name="r_id">
+    <column id="73" parent="35" name="r_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>630</StateNumber>
+      <StateNumber>2911</StateNumber>
       <DefaultExpression>nextval(&apos;rooms_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="72" parent="34" name="name">
+    <column id="74" parent="35" name="name">
       <Position>2</Position>
       <DataType>char(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>630</StateNumber>
+      <StateNumber>2911</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <index id="73" parent="34" name="rooms_pkey">
-      <ObjectId>24612</ObjectId>
-      <StateNumber>630</StateNumber>
+    <index id="75" parent="35" name="rooms_pkey">
+      <ObjectId>40975</ObjectId>
+      <StateNumber>2911</StateNumber>
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="74" parent="34" name="rooms_pkey">
-      <ObjectId>24613</ObjectId>
-      <StateNumber>630</StateNumber>
+    <key id="76" parent="35" name="rooms_pkey">
+      <ObjectId>40976</ObjectId>
+      <StateNumber>2911</StateNumber>
       <ColNames>name</ColNames>
       <UnderlyingIndexName>rooms_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="75" parent="35" name="r_id">
+    <column id="77" parent="36" name="r_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1413</StateNumber>
+      <StateNumber>2914</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="76" parent="35" name="d_id">
+    <column id="78" parent="36" name="d_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1413</StateNumber>
+      <StateNumber>2914</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="77" parent="35" name="time">
+    <column id="79" parent="36" name="time">
       <Position>3</Position>
       <DataType>char(16)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1413</StateNumber>
+      <StateNumber>2914</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="78" parent="35" name="value">
+    <column id="80" parent="36" name="value">
       <Position>4</Position>
       <DataType>real|0s</DataType>
-      <StateNumber>1413</StateNumber>
+      <StateNumber>2914</StateNumber>
       <TypeId>700</TypeId>
     </column>
-    <column id="79" parent="36" name="r_id">
+    <column id="81" parent="37" name="r_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1409</StateNumber>
+      <StateNumber>2912</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="80" parent="36" name="d_id">
+    <column id="82" parent="37" name="d_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1409</StateNumber>
+      <StateNumber>2912</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="81" parent="36" name="time">
+    <column id="83" parent="37" name="time">
       <Position>3</Position>
       <DataType>char(16)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>1409</StateNumber>
+      <StateNumber>2912</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="82" parent="36" name="value">
+    <column id="84" parent="37" name="value">
       <Position>4</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>1409</StateNumber>
+      <StateNumber>2912</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="83" parent="37" name="wd_id">
+    <column id="85" parent="38" name="u_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>660</StateNumber>
+      <StateNumber>8729</StateNumber>
+      <DefaultExpression>nextval(&apos;user_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="84" parent="37" name="d_id">
+    <column id="86" parent="38" name="name">
+      <Position>2</Position>
+      <DataType>char(30)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8729</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="87" parent="38" name="password">
+      <Position>3</Position>
+      <DataType>char(16)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>8729</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="88" parent="38" name="is_admin">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>8729</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="89" parent="38" name="users_name_key">
+      <ObjectId>41049</ObjectId>
+      <StateNumber>8729</StateNumber>
+      <ColNames>name</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="90" parent="38" name="users_name_key">
+      <ObjectId>41050</ObjectId>
+      <StateNumber>8729</StateNumber>
+      <ColNames>name</ColNames>
+      <UnderlyingIndexName>users_name_key</UnderlyingIndexName>
+    </key>
+    <check id="91" parent="38" name="users_is_admin_check">
+      <ObjectId>41048</ObjectId>
+      <StateNumber>8729</StateNumber>
+      <ColNames>is_admin</ColNames>
+      <Predicate>(is_admin = 1) OR (is_admin = 0)</Predicate>
+    </check>
+    <column id="92" parent="39" name="wd_id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>2917</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="93" parent="39" name="d_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>660</StateNumber>
+      <StateNumber>2917</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="85" parent="37" name="value">
+    <column id="94" parent="39" name="value">
       <Position>3</Position>
       <DataType>integer|0s</DataType>
-      <StateNumber>660</StateNumber>
+      <StateNumber>2917</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="86" parent="37" name="time">
+    <column id="95" parent="39" name="time">
       <Position>4</Position>
       <DataType>char(16)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>660</StateNumber>
+      <StateNumber>2917</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <foreign-key id="87" parent="37" name="water_consumption_wd_id_fkey">
-      <ObjectId>24655</ObjectId>
-      <StateNumber>660</StateNumber>
+    <foreign-key id="96" parent="39" name="water_consumption_wd_id_fkey">
+      <ObjectId>40999</ObjectId>
+      <StateNumber>2917</StateNumber>
       <ColNames>wd_id</ColNames>
-      <RefTableId>24628</RefTableId>
+      <RefTableId>40988</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>water_devices</RefTableName>
       <RefKeyName>water_devices_pkey</RefKeyName>
       <RefColNames>wd_id</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="88" parent="38" name="wd_id">
+    <column id="97" parent="40" name="wd_id">
       <Position>1</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>653</StateNumber>
+      <StateNumber>2916</StateNumber>
       <DefaultExpression>nextval(&apos;water_d_seq&apos;::regclass)</DefaultExpression>
       <TypeId>23</TypeId>
     </column>
-    <column id="89" parent="38" name="r_id">
+    <column id="98" parent="40" name="r_id">
       <Position>2</Position>
       <DataType>integer|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>653</StateNumber>
+      <StateNumber>2916</StateNumber>
       <TypeId>23</TypeId>
     </column>
-    <column id="90" parent="38" name="name">
+    <column id="99" parent="40" name="name">
       <Position>3</Position>
       <DataType>char(30)|0s</DataType>
-      <StateNumber>653</StateNumber>
+      <StateNumber>2916</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="91" parent="38" name="type">
+    <column id="100" parent="40" name="type">
       <Position>4</Position>
       <DataType>char(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>653</StateNumber>
+      <StateNumber>2916</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <column id="92" parent="38" name="brand">
+    <column id="101" parent="40" name="brand">
       <Position>5</Position>
       <DataType>char(30)|0s</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>653</StateNumber>
+      <StateNumber>2916</StateNumber>
       <TypeId>1042</TypeId>
     </column>
-    <index id="93" parent="38" name="water_devices_pkey">
-      <ObjectId>24632</ObjectId>
-      <StateNumber>653</StateNumber>
+    <index id="102" parent="40" name="water_devices_pkey">
+      <ObjectId>40992</ObjectId>
+      <StateNumber>2916</StateNumber>
       <ColNames>wd_id</ColNames>
       <Unique>1</Unique>
     </index>
-    <index id="94" parent="38" name="water_devices_name_key">
-      <ObjectId>24634</ObjectId>
-      <StateNumber>653</StateNumber>
+    <index id="103" parent="40" name="water_devices_name_key">
+      <ObjectId>40994</ObjectId>
+      <StateNumber>2916</StateNumber>
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="95" parent="38" name="water_devices_pkey">
-      <ObjectId>24633</ObjectId>
-      <StateNumber>653</StateNumber>
+    <key id="104" parent="40" name="water_devices_pkey">
+      <ObjectId>40993</ObjectId>
+      <StateNumber>2916</StateNumber>
       <ColNames>wd_id</ColNames>
       <UnderlyingIndexName>water_devices_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <key id="96" parent="38" name="water_devices_name_key">
-      <ObjectId>24635</ObjectId>
-      <StateNumber>653</StateNumber>
+    <key id="105" parent="40" name="water_devices_name_key">
+      <ObjectId>40995</ObjectId>
+      <StateNumber>2916</StateNumber>
       <ColNames>name</ColNames>
       <UnderlyingIndexName>water_devices_name_key</UnderlyingIndexName>
     </key>

@@ -19,3 +19,7 @@ create table power_consumption(ps_id int4 not null, d_id int4 not null, value in
 create sequence bulbs_seq;
 create table light_bulbs(lb_id int4 primary key default nextval('bulbs_seq'), r_id int4 not null, name char(30) unique not null, type char(30), brand char(30) );
 create table light_bulb_status(lb_id int4 references light_bulbs(lb_id) on delete cascade, d_id int4 not null, level_of_consumption float(5) not null, power_consumption int4  not null, time char(16) not null);
+
+
+create sequence user_seq;
+create table users(u_id int4 default nextval('user_seq'), name char(30) unique not null, password char(16) not null, is_admin int4 default 0 check ( is_admin = 1 or is_admin = 0 ));

@@ -48,9 +48,4 @@ def init(home_controller):
     home_controller.add_power_socket("Gniazdo_sypialnia", Rooms.bedroom)
     home_controller.add_power_socket("Gniazdo_korytarz", Rooms.corridor)
 
-    # water devices
-    home_controller.add_water_device("Pralka_KEK", "Pralka_KEK", "Samsung", Rooms.bathroom)
-    home_controller.add_water_device("Zmywarka", "Zymywarka", "Samsung", Rooms.bathroom)
 
-    # home_controller.save_devices()
-    # home_controller.save_sensors()

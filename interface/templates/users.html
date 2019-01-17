@@ -1,0 +1,69 @@
+{% extends "basic.html" %}
+{% block title %} Users {% endblock %}
+{% block name %} {{ info.name }} {% endblock %}
+{% block content %}
+<!-- Page Content -->
+<div class="row">
+  <div class="col-lg-8">
+    <div class="card mb-3">
+        <div class="card-header">
+            Users
+        </div>
+
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="bulbTable" width="90%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th></th>
+                  </tr>
+                  <tbody>
+                  {% for value in info.users %}
+                    <tr>
+                      <td>{{ value.name  }}</td>
+                      {% if not value.is_admin %}
+                      <td><button class="btn btn-primary btn-block" onclick="window.location='delete?name={{value.name}}'">Delete</button></td>
+                      {% endif %}
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </thead>
+              </table>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-3">
+    <div class="card mb-3">
+      <div class="card-header">
+        Add user
+      </div>
+
+      <div class="card-body">
+        <form action="add_user" method="POST">
+          <div class="form-group">
+            <div class="form-label-group">
+              <input class="form-control" name="name" placeholder="Name" required="required" autofocus="autofocus">
+                <label>Name</label>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+                <label for="inputPassword">Password</label>
+              </div>
+          </div>
+          <div class="form-group">
+            <td><button class="btn btn-primary btn-block">Add User</button></td>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

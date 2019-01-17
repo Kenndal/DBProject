@@ -5,7 +5,7 @@ from psql.sql_controller import SqlController
 from simulators.day import Day
 from simulators.devices import WaterDevice, PowerSocket, LightBulb
 import logging
-from simulators.enum import SensorType
+from simulators.enum import SensorType, Rooms
 from simulators.sensors import TemperatureSensor, HumilitySensor, SmokeSensor
 
 
@@ -31,6 +31,8 @@ class HomeController:
         self.day = Day(self.sql_controller, self.logger, self.flag)
         self.day_thread = threading.Thread(target=self.day.start)
         self.day_thread.start()
+
+        self.check_thread = None
 
     def add_water_device(self, name, _type, brand, room):
         self.logger.info("Create water device with name {}.".format(name))
@@ -99,7 +101,7 @@ class HomeController:
         if self.device_list:
             for device in self.device_list:
                 t = threading.Thread(target=device.check_status_start)
-                self.device_thread_list.append(t)
+                self.device_thread_list.append({device.name: t})
                 t.start()
                 sleep(1)
         else:
@@ -111,7 +113,7 @@ class HomeController:
             for device in self.device_list:
                 device.flag = False
             for thread in self.device_thread_list:
-                thread.join()
+                thread.values().join()
         else:
             self.logger.warn("No created devices, Nothing to stop.")
 

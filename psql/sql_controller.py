@@ -343,6 +343,7 @@ class SqlController:
             self.logger.info("Getting light bulb {} status ".format(lb_id))
             self.cursor.execute(sql, (self.d_id, lb_id))
             data = self.cursor.fetchall()
+            self.logger.info(str(data))
             self.connection.commit()
             return data
         except (Exception, psycopg2.DatabaseError) as error:
@@ -371,6 +372,44 @@ class SqlController:
             self.get_day_id()
             self.logger.info("Getting power socket {} consumption...".format(ps_id))
             self.cursor.execute(sql, (self.d_id, ps_id))
+            data = self.cursor.fetchall()
+            self.connection.commit()
+            return data
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+            return None
+
+    def create_user(self, name, password):
+        sql = """insert into users(name, password) VALUES (%s, %s);"""
+
+        try:
+            self.logger.info("Adding new user with name {}".format(name))
+            self.cursor.execute(sql, (name, password))
+            self.connection.commit()
+            self.logger.info("Added new user with name {}".format(name))
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+
+    def delete_user(self, name):
+        sql = """delete from users where name = %s;"""
+
+        try:
+            self.logger.info("Deleting user with name {}.".format(name))
+            self.cursor.execute(sql, (name,))
+            self.connection.commit()
+            self.logger.info("Deleted user with name {}.".format(name))
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+
+    def get_users(self):
+        sql = """select name, password, is_admin from users;"""
+
+        try:
+            self.logger.info("Selecting all users.")
+            self.cursor.execute(sql)
             data = self.cursor.fetchall()
             self.connection.commit()
             return data
