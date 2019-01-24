@@ -13,9 +13,14 @@ class HomeController:
 
     def __init__(self):
         # Create logger
-        logging.basicConfig(filename='logs/home_logger.log', filemode='w', level=logging.DEBUG,
-                            format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s')
+        _format = logging.Formatter('%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s')
+
+        handler = logging.FileHandler('logs/home_logger.log', mode='w')
+        handler.setFormatter(_format)
+
         self.logger = logging.getLogger("home_logger")
+        self.logger.addHandler(handler)
+        self.logger.setLevel(logging.DEBUG)
         self.logger.info("Home Controller started.")
 
         # Create psql controller

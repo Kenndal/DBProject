@@ -1,0 +1,4 @@
+2019-01-24 20:32:36,273 INFO sql_controller - __init__: Created psql controller.
+2019-01-24 20:32:36,273 INFO connection - connect_to_db: Connecting to the PostgreSQL database...
+2019-01-24 20:32:37,322 INFO connection - connect_to_db: PostgreSQL database version:
+2019-01-24 20:32:37,322 INFO connection - connect_to_db: ('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-16ubuntu3) 7.3.0, 64-bit',)

@@ -12,18 +12,21 @@ from flask import Flask, render_template, request, redirect
 from psql.sql_controller import SqlController
 
 app = Flask('Home controller', template_folder="interface/templates", static_folder="interface/static")
-logging.basicConfig(filename='logs/home_logger.log', filemode='w', level=logging.DEBUG,
-                    format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s')
+_format = logging.Formatter('%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s')
 
-logging.basicConfig(filename='logs/interface.log', filemode='w', level=logging.DEBUG,
-                            format='%(asctime)s %(levelname)s %(module)s - %(funcName)s: %(message)s')
-logger = logging.getLogger("interface_logger")
+handler = logging.FileHandler("logs/web_logs.log", mode='w')
+handler.setFormatter(_format)
+
+logger = logging.getLogger("web_logger")
 logger.info("Web server start...")
+logger.addHandler(handler)
+logger.setLevel(logging.DEBUG)
 
 sql_controller = SqlController(logger)
 sql_controller.connect()
 
 logged = ""
+
 
 @app.route("/")
 def index():
