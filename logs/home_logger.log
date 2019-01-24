@@ -1,99 +1,195 @@
-2019-01-17 21:42:33,145 INFO home_controller - __init__: Home Controller started.
-2019-01-17 21:42:33,145 INFO sql_controller - __init__: Created psql controller.
-2019-01-17 21:42:33,148 INFO connection - connect_to_db: Connecting to the PostgreSQL database...
-2019-01-17 21:42:34,187 INFO connection - connect_to_db: PostgreSQL database version:
-2019-01-17 21:42:34,188 INFO connection - connect_to_db: ('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-16ubuntu3) 7.3.0, 64-bit',)
-2019-01-17 21:42:34,188 INFO day - __init__: Created instance day.
-2019-01-17 21:42:34,190 INFO day - start: Starting counting time in day instance.
-2019-01-17 21:42:34,193 INFO sql_controller - get_day_date: Try to select days
-2019-01-17 21:42:34,194 INFO sql_controller - get_day_date: Select from days done: [(1, '2019-01-13'), (2, '2019-01-14'), (3, '2019-01-15')]
-2019-01-17 21:42:34,196 INFO sql_controller - new_day: Get new day
-2019-01-17 21:42:34,200 INFO sql_controller - new_day: New day with param: d_id:4
-2019-01-17 21:42:39,190 INFO sql_controller - create_user: Adding new user with name kek
-2019-01-17 21:42:39,196 INFO sql_controller - create_user: Added new user with name kek
-2019-01-17 21:42:39,196 INFO home_controller - add_sensor: Create sensor SensorType.temperature_sensor.
-2019-01-17 21:42:39,196 INFO home_controller - add_sensor: Create sensor SensorType.temperature_sensor.
-2019-01-17 21:42:39,196 INFO home_controller - add_sensor: Create sensor SensorType.temperature_sensor.
-2019-01-17 21:42:39,196 INFO home_controller - add_sensor: Create sensor SensorType.temperature_sensor.
-2019-01-17 21:42:39,196 INFO home_controller - add_sensor: Create sensor SensorType.temperature_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.humidity_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.humidity_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.humidity_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.humidity_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.humidity_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.smoke_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.smoke_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.smoke_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.smoke_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_sensor: Create sensor SensorType.smoke_sensor.
-2019-01-17 21:42:39,197 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,197 INFO sql_controller - check_light_bulb: Checking if device Zarowka_lazienka exist in database.
-2019-01-17 21:42:39,197 INFO sql_controller - check_light_bulb: (1,)
-2019-01-17 21:42:39,198 INFO sql_controller - check_light_bulb: Device Zarowka_lazienka exist in database.
-2019-01-17 21:42:39,198 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,200 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,200 INFO sql_controller - check_light_bulb: Checking if device Zarowka_lazienka_2 exist in database.
-2019-01-17 21:42:39,203 INFO sql_controller - check_light_bulb: (6,)
-2019-01-17 21:42:39,203 INFO sql_controller - check_light_bulb: Device Zarowka_lazienka_2 exist in database.
-2019-01-17 21:42:39,203 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,203 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,203 INFO sql_controller - check_light_bulb: Checking if device Zarowka_kuchnia exist in database.
-2019-01-17 21:42:39,203 INFO sql_controller - check_light_bulb: (2,)
-2019-01-17 21:42:39,204 INFO sql_controller - check_light_bulb: Device Zarowka_kuchnia exist in database.
-2019-01-17 21:42:39,204 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,206 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,206 INFO sql_controller - check_light_bulb: Checking if device Zarowka_kuchnia_2 exist in database.
-2019-01-17 21:42:39,207 INFO sql_controller - check_light_bulb: (7,)
-2019-01-17 21:42:39,207 INFO sql_controller - check_light_bulb: Device Zarowka_kuchnia_2 exist in database.
-2019-01-17 21:42:39,207 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,209 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,209 INFO sql_controller - check_light_bulb: Checking if device Zarowka_salon exist in database.
-2019-01-17 21:42:39,209 INFO sql_controller - check_light_bulb: (3,)
-2019-01-17 21:42:39,210 INFO sql_controller - check_light_bulb: Device Zarowka_salon exist in database.
-2019-01-17 21:42:39,210 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,210 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,210 INFO sql_controller - check_light_bulb: Checking if device Zarowka_salon_2 exist in database.
-2019-01-17 21:42:39,211 INFO sql_controller - check_light_bulb: (8,)
-2019-01-17 21:42:39,211 INFO sql_controller - check_light_bulb: Device Zarowka_salon_2 exist in database.
-2019-01-17 21:42:39,211 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,213 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,213 INFO sql_controller - check_light_bulb: Checking if device Zarowka_sypialnia exist in database.
-2019-01-17 21:42:39,213 INFO sql_controller - check_light_bulb: (4,)
-2019-01-17 21:42:39,213 INFO sql_controller - check_light_bulb: Device Zarowka_sypialnia exist in database.
-2019-01-17 21:42:39,213 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,213 INFO home_controller - add_light_bulb: Create light bulb.
-2019-01-17 21:42:39,214 INFO sql_controller - check_light_bulb: Checking if device Zarowka_korytarz exist in database.
-2019-01-17 21:42:39,214 INFO sql_controller - check_light_bulb: (5,)
-2019-01-17 21:42:39,214 INFO sql_controller - check_light_bulb: Device Zarowka_korytarz exist in database.
-2019-01-17 21:42:39,214 INFO sql_controller - get_bulb_level_of_consumption: Getting light bulb status...
-2019-01-17 21:42:39,216 INFO home_controller - add_power_socket: Create power socket with name Gniazdo_lazienka.
-2019-01-17 21:42:39,216 INFO sql_controller - check_power_socket: Checking if device Gniazdo_lazienka exist in database.
-2019-01-17 21:42:39,217 INFO sql_controller - check_power_socket: (1,)
-2019-01-17 21:42:39,217 INFO sql_controller - check_power_socket: Device Gniazdo_lazienka exist in database.
-2019-01-17 21:42:39,217 INFO home_controller - add_power_socket: Create power socket with name Gniazdo_lazienka_2.
-2019-01-17 21:42:39,219 INFO sql_controller - check_power_socket: Checking if device Gniazdo_lazienka_2 exist in database.
-2019-01-17 21:42:39,219 INFO sql_controller - check_power_socket: (6,)
-2019-01-17 21:42:39,219 INFO sql_controller - check_power_socket: Device Gniazdo_lazienka_2 exist in database.
-2019-01-17 21:42:39,219 INFO home_controller - add_power_socket: Create power socket with name Gniazdo_kuchnia.
-2019-01-17 21:42:39,219 INFO sql_controller - check_power_socket: Checking if device Gniazdo_kuchnia exist in database.
-2019-01-17 21:42:39,220 INFO sql_controller - check_power_socket: (2,)
-2019-01-17 21:42:39,220 INFO sql_controller - check_power_socket: Device Gniazdo_kuchnia exist in database.
-2019-01-17 21:42:39,220 INFO home_controller - add_power_socket: Create power socket with name Gniazdo_salon.
-2019-01-17 21:42:39,220 INFO sql_controller - check_power_socket: Checking if device Gniazdo_salon exist in database.
-2019-01-17 21:42:39,220 INFO sql_controller - check_power_socket: (3,)
-2019-01-17 21:42:39,220 INFO sql_controller - check_power_socket: Device Gniazdo_salon exist in database.
-2019-01-17 21:42:39,220 INFO home_controller - add_power_socket: Create power socket with name Gniazdo_sypialnia.
-2019-01-17 21:42:39,220 INFO sql_controller - check_power_socket: Checking if device Gniazdo_sypialnia exist in database.
-2019-01-17 21:42:39,221 INFO sql_controller - check_power_socket: (4,)
-2019-01-17 21:42:39,221 INFO sql_controller - check_power_socket: Device Gniazdo_sypialnia exist in database.
-2019-01-17 21:42:39,221 INFO home_controller - add_power_socket: Create power socket with name Gniazdo_korytarz.
-2019-01-17 21:42:39,221 INFO sql_controller - check_power_socket: Checking if device Gniazdo_korytarz exist in database.
-2019-01-17 21:42:39,223 INFO sql_controller - check_power_socket: (5,)
-2019-01-17 21:42:39,223 INFO sql_controller - check_power_socket: Device Gniazdo_korytarz exist in database.
-2019-01-17 21:42:39,223 WARNING home_controller - start_devises: Starting all devices.
-2019-01-17 21:42:39,223 INFO devices - check_status_start: Light bulb started in room bathroom.
-2019-01-17 21:42:39,223 INFO devices - check_status_start: Bulb Zarowka_lazienka from room bathroom information: level of consumption: 99.98, power consumption: 6.
-2019-01-17 21:42:39,223 INFO sql_controller - get_day_id: Try to select days
-2019-01-17 21:42:39,224 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
-2019-01-17 21:42:39,224 INFO sql_controller - insert_into_light_bulb_status: Try to insert values: 99.98, 6 with params: lb_id: 1, d_id: 4.
-2019-01-17 21:42:39,233 INFO sql_controller - insert_into_light_bulb_status: Insert complete for lb_id: 1.
+2019-01-24 20:15:36,986 INFO web_controller - <module>: Web server start...
+2019-01-24 20:15:36,986 INFO sql_controller - __init__: Created psql controller.
+2019-01-24 20:15:36,986 INFO connection - connect_to_db: Connecting to the PostgreSQL database...
+2019-01-24 20:15:38,040 INFO connection - connect_to_db: PostgreSQL database version:
+2019-01-24 20:15:38,040 INFO connection - connect_to_db: ('PostgreSQL 10.6 (Ubuntu 10.6-0ubuntu0.18.04.1) on x86_64-pc-linux-gnu, compiled by gcc (Ubuntu 7.3.0-16ubuntu3) 7.3.0, 64-bit',)
+2019-01-24 20:15:38,072 INFO _internal - _log:  * Running on http://0.0.0.0:5000/ (Press CTRL+C to quit)
+2019-01-24 20:15:44,365 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:44] "GET / HTTP/1.1" 302 -
+2019-01-24 20:15:44,375 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:44] "GET /login HTTP/1.1" 200 -
+2019-01-24 20:15:46,049 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/js/jquery.min.js HTTP/1.1" 200 -
+2019-01-24 20:15:46,051 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/css/bootstrap.min.css HTTP/1.1" 200 -
+2019-01-24 20:15:46,051 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/css/sb-admin.css HTTP/1.1" 200 -
+2019-01-24 20:15:46,052 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/css/all.min.css HTTP/1.1" 200 -
+2019-01-24 20:15:46,052 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/css/dataTables.bootstrap4.css HTTP/1.1" 200 -
+2019-01-24 20:15:46,062 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/js/bootstrap.bundle.min.js HTTP/1.1" 200 -
+2019-01-24 20:15:46,065 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/js/jquery.easing.min.js HTTP/1.1" 200 -
+2019-01-24 20:15:46,068 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:46] "GET /static/js/sb-admin.min.js HTTP/1.1" 200 -
+2019-01-24 20:15:49,496 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:15:49,507 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:49] "POST /log_in HTTP/1.1" 200 -
+2019-01-24 20:15:49,526 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:49] "GET /static/Top_Kek.png HTTP/1.1" 200 -
+2019-01-24 20:15:49,569 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:49] "GET /static/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 -
+2019-01-24 20:15:50,815 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:15:50,825 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:50] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:15:55,217 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:15:55,217 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:15:55,220 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:55] "POST /change_name HTTP/1.1" 200 -
+2019-01-24 20:15:58,338 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:15:58] "GET /logout HTTP/1.1" 200 -
+2019-01-24 20:16:01,670 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:01,671 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:01] "POST /log_in HTTP/1.1" 200 -
+2019-01-24 20:16:05,210 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:05,210 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:05] "POST /log_in HTTP/1.1" 200 -
+2019-01-24 20:16:06,342 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:06,344 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:06] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:16:11,986 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:11,989 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:11,990 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:11,993 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:11] "POST /change_name HTTP/1.1" 200 -
+2019-01-24 20:16:18,661 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:18,661 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:18,663 INFO sql_controller - change_user_name: Changing name...
+2019-01-24 20:16:18,671 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:18] "POST /change_name HTTP/1.1" 302 -
+2019-01-24 20:16:18,676 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:18,677 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:18] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:16:33,440 INFO sql_controller - delete_user: Deleting user with name Kuba2.
+2019-01-24 20:16:33,453 INFO sql_controller - delete_user: Deleted user with name Kuba2.
+2019-01-24 20:16:33,453 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:33] "GET /delete?name=Kuba2 HTTP/1.1" 302 -
+2019-01-24 20:16:33,457 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:33,459 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:33] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:16:35,878 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:16:35,887 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:16:35,888 INFO sql_controller - get_temperature: Getting data from temperature...
+2019-01-24 20:16:35,898 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:16:35,900 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:16:35,900 INFO sql_controller - get_humidity: Getting data from humidity...
+2019-01-24 20:16:35,904 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:16:35,904 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:16:35,905 INFO sql_controller - get_smoke: Getting data from smoke...
+2019-01-24 20:16:35,911 INFO sql_controller - get_all_bulbs_from_room: Getting all light bulbs from room kitchen...
+2019-01-24 20:16:35,915 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:16:35,915 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:16:35,917 INFO sql_controller - get_light_bulb_status: Getting light bulb 7 status 
+2019-01-24 20:16:35,920 INFO sql_controller - get_light_bulb_status: []
+2019-01-24 20:16:35,921 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:16:35,921 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:16:35,921 INFO sql_controller - get_light_bulb_status: Getting light bulb 13 status 
+2019-01-24 20:16:35,923 INFO sql_controller - get_light_bulb_status: []
+2019-01-24 20:16:35,923 INFO sql_controller - get_power_sockets_from_room: Getting all power sockets from room kitchen
+2019-01-24 20:16:35,924 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:16:35,927 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:16:35,928 INFO sql_controller - get_power_sockets_status: Getting power socket 2 consumption...
+2019-01-24 20:16:35,947 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:35] "GET /kitchen HTTP/1.1" 200 -
+2019-01-24 20:16:35,966 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:35] "GET /static/js/Chart.min.js HTTP/1.1" 200 -
+2019-01-24 20:16:35,971 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:35] "GET /static/js/chart-temperature.js HTTP/1.1" 200 -
+2019-01-24 20:16:35,977 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:35] "GET /static/js/chart-humiditi.js HTTP/1.1" 200 -
+2019-01-24 20:16:35,977 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:35] "GET /static/js/chart-smoke.js HTTP/1.1" 200 -
+2019-01-24 20:16:37,578 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:37,581 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:37] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:16:39,467 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:39] "GET /home HTTP/1.1" 200 -
+2019-01-24 20:16:40,795 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:40] "GET /logout HTTP/1.1" 200 -
+2019-01-24 20:16:47,964 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:47,967 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:47] "POST /log_in HTTP/1.1" 200 -
+2019-01-24 20:16:51,753 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:51,756 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:51] "POST /log_in HTTP/1.1" 200 -
+2019-01-24 20:16:52,707 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:16:52,710 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:16:52] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:04,043 INFO sql_controller - create_user: Adding new user with name Kuba
+2019-01-24 20:17:04,063 INFO sql_controller - create_user: Added new user with name Kuba
+2019-01-24 20:17:04,065 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:04] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:04,068 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:04,069 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:04] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:08,084 INFO sql_controller - create_user: Adding new user with name Kuba2
+2019-01-24 20:17:08,094 INFO sql_controller - create_user: Added new user with name Kuba2
+2019-01-24 20:17:08,095 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:08] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:08,098 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:08,098 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:08] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:10,671 INFO sql_controller - create_user: Adding new user with name Kosa
+2019-01-24 20:17:10,683 INFO sql_controller - create_user: Added new user with name Kosa
+2019-01-24 20:17:10,684 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:10] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:10,687 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:10,690 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:10] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:15,174 INFO sql_controller - create_user: Adding new user with name kek
+2019-01-24 20:17:15,184 INFO sql_controller - create_user: Added new user with name kek
+2019-01-24 20:17:15,184 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:15] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:15,190 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:15,190 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:15] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:17,903 INFO sql_controller - create_user: Adding new user with name dupa
+2019-01-24 20:17:17,911 INFO sql_controller - create_user: Added new user with name dupa
+2019-01-24 20:17:17,911 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:17] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:17,914 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:17,915 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:17] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:20,246 INFO sql_controller - create_user: Adding new user with name jej
+2019-01-24 20:17:20,253 INFO sql_controller - create_user: Added new user with name jej
+2019-01-24 20:17:20,255 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:20] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:20,257 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:20,259 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:20] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:22,372 INFO sql_controller - create_user: Adding new user with name lol
+2019-01-24 20:17:22,380 INFO sql_controller - create_user: Added new user with name lol
+2019-01-24 20:17:22,380 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:22] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:22,384 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:22,387 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:22] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:24,842 INFO sql_controller - create_user: Adding new user with name kek
+2019-01-24 20:17:24,854 CRITICAL sql_controller - create_user: duplicate key value violates unique constraint "users_name_key"
+DETAIL:  Key (name)=(kek                           ) already exists.
+
+2019-01-24 20:17:24,855 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:24] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:24,858 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:24,859 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:24] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:36,552 INFO sql_controller - create_user: Adding new user with name lel
+2019-01-24 20:17:36,559 INFO sql_controller - create_user: Added new user with name lel
+2019-01-24 20:17:36,561 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:36] "POST /add_user HTTP/1.1" 302 -
+2019-01-24 20:17:36,565 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:36,566 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:36] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:39,190 INFO sql_controller - delete_user: Deleting user with name lel.
+2019-01-24 20:17:39,198 INFO sql_controller - delete_user: Deleted user with name lel.
+2019-01-24 20:17:39,200 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:39] "GET /delete?name=lel HTTP/1.1" 302 -
+2019-01-24 20:17:39,206 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:39,207 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:39] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:40,256 INFO sql_controller - delete_user: Deleting user with name lol.
+2019-01-24 20:17:40,263 INFO sql_controller - delete_user: Deleted user with name lol.
+2019-01-24 20:17:40,265 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:40] "GET /delete?name=lol HTTP/1.1" 302 -
+2019-01-24 20:17:40,269 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:40,272 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:40] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:40,704 INFO sql_controller - delete_user: Deleting user with name jej.
+2019-01-24 20:17:40,716 INFO sql_controller - delete_user: Deleted user with name jej.
+2019-01-24 20:17:40,717 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:40] "GET /delete?name=jej HTTP/1.1" 302 -
+2019-01-24 20:17:40,721 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:40,723 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:40] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:41,470 INFO sql_controller - delete_user: Deleting user with name dupa.
+2019-01-24 20:17:41,482 INFO sql_controller - delete_user: Deleted user with name dupa.
+2019-01-24 20:17:41,483 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:41] "GET /delete?name=dupa HTTP/1.1" 302 -
+2019-01-24 20:17:41,487 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:41,490 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:41] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:41,918 INFO sql_controller - delete_user: Deleting user with name kek.
+2019-01-24 20:17:41,927 INFO sql_controller - delete_user: Deleted user with name kek.
+2019-01-24 20:17:41,927 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:41] "GET /delete?name=kek HTTP/1.1" 302 -
+2019-01-24 20:17:41,931 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:41,934 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:41] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:42,299 INFO sql_controller - delete_user: Deleting user with name Kosa.
+2019-01-24 20:17:42,305 INFO sql_controller - delete_user: Deleted user with name Kosa.
+2019-01-24 20:17:42,306 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:42] "GET /delete?name=Kosa HTTP/1.1" 302 -
+2019-01-24 20:17:42,311 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:42,312 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:42] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:42,742 INFO sql_controller - delete_user: Deleting user with name Kuba2.
+2019-01-24 20:17:42,747 INFO sql_controller - delete_user: Deleted user with name Kuba2.
+2019-01-24 20:17:42,749 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:42] "GET /delete?name=Kuba2 HTTP/1.1" 302 -
+2019-01-24 20:17:42,753 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:42,756 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:42] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:43,924 INFO sql_controller - delete_user: Deleting user with name Kuba.
+2019-01-24 20:17:43,931 INFO sql_controller - delete_user: Deleted user with name Kuba.
+2019-01-24 20:17:43,933 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:43] "GET /delete?name=Kuba HTTP/1.1" 302 -
+2019-01-24 20:17:43,937 INFO sql_controller - get_users: Selecting all users.
+2019-01-24 20:17:43,938 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:43] "GET /users HTTP/1.1" 200 -
+2019-01-24 20:17:46,948 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:17:46,950 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:17:46,950 INFO sql_controller - get_temperature: Getting data from temperature...
+2019-01-24 20:17:46,951 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:17:46,953 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:17:46,953 INFO sql_controller - get_humidity: Getting data from humidity...
+2019-01-24 20:17:46,953 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:17:46,954 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:17:46,954 INFO sql_controller - get_smoke: Getting data from smoke...
+2019-01-24 20:17:46,956 INFO sql_controller - get_all_bulbs_from_room: Getting all light bulbs from room kitchen...
+2019-01-24 20:17:46,957 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:17:46,957 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:17:46,957 INFO sql_controller - get_light_bulb_status: Getting light bulb 7 status 
+2019-01-24 20:17:46,959 INFO sql_controller - get_light_bulb_status: []
+2019-01-24 20:17:46,959 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:17:46,960 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:17:46,960 INFO sql_controller - get_light_bulb_status: Getting light bulb 13 status 
+2019-01-24 20:17:46,960 INFO sql_controller - get_light_bulb_status: []
+2019-01-24 20:17:46,960 INFO sql_controller - get_power_sockets_from_room: Getting all power sockets from room kitchen
+2019-01-24 20:17:46,964 INFO sql_controller - get_day_id: Try to select days
+2019-01-24 20:17:46,966 INFO sql_controller - get_day_id: Select from days done: (4, '2019-01-17')
+2019-01-24 20:17:46,967 INFO sql_controller - get_power_sockets_status: Getting power socket 2 consumption...
+2019-01-24 20:17:46,969 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:46] "GET /kitchen HTTP/1.1" 200 -
+2019-01-24 20:17:48,930 INFO _internal - _log: 127.0.0.1 - - [24/Jan/2019 20:17:48] "GET /home HTTP/1.1" 200 -

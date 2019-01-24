@@ -4,12 +4,11 @@
 {% block content %}
 <!-- Page Content -->
 <div class="row">
-  <div class="col-lg-8">
+  <div class="col-lg-9">
     <div class="card mb-3">
         <div class="card-header">
             Users
         </div>
-
           <div class="card-body">
             <div class="table-responsive">
               <table class="table table-bordered" id="bulbTable" width="90%" cellspacing="0">
@@ -39,20 +38,19 @@
   <div class="col-lg-3">
     <div class="card mb-3">
       <div class="card-header">
-        Add user
+        Add User
       </div>
-
       <div class="card-body">
         <form action="add_user" method="POST">
           <div class="form-group">
             <div class="form-label-group">
-              <input class="form-control" name="name" placeholder="Name" required="required" autofocus="autofocus">
+              <input class="form-control" name="name" required="required" autofocus="autofocus">
                 <label>Name</label>
               </div>
           </div>
           <div class="form-group">
             <div class="form-label-group">
-              <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
+              <input type="password" name="password" id="inputPassword" class="form-control" required="required">
                 <label for="inputPassword">Password</label>
               </div>
           </div>
@@ -60,6 +58,60 @@
             <td><button class="btn btn-primary btn-block">Add User</button></td>
           </div>
         </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card mb-3">
+      <div class="card-header">
+        Change Password
+      </div>
+      <div class="card-body">
+        <form action="change_password" method="POST">
+          <div class="form-group">
+            <div class="form-label-group">
+              <input class="form-control" type="password"  id="old_password" name="old_password" required="required" autofocus="autofocus">
+                <label for="inputPassword">Old Password</label>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="password" name="new_password" id="new_password" class="form-control" required="required">
+                <label for="inputPassword">New Password</label>
+              </div>
+          </div>
+          <div class="form-group">
+            <td><button class="btn btn-primary btn-block">Change</button></td>
+          </div>
+        </form>
+        <p style="color: #c82333">{{ info.change_password_error }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card mb-3">
+      <div class="card-header">
+        Change Password
+      </div>
+      <div class="card-body">
+        <form action="change_name" method="POST">
+          <div class="form-group">
+            <div class="form-label-group">
+              <input class="form-control" id="new_name" name="new_name" required="required" autofocus="autofocus">
+                <label>New Name</label>
+              </div>
+          </div>
+          <div class="form-group">
+            <div class="form-label-group">
+              <input type="password" name="password_confirm" class="form-control" required="required">
+                <label for="inputPassword">Password</label>
+              </div>
+          </div>
+          <div class="form-group">
+            <td><button class="btn btn-primary btn-block">Change</button></td>
+          </div>
+        </form>
+        <p style="color: #c82333">{{ info.change_name_error }}</p>
       </div>
     </div>
   </div>

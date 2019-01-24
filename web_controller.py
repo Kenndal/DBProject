@@ -2,7 +2,8 @@ import logging
 
 from interface.tools.devices_status import get_light_bulbs_status, get_power_socket_status
 from interface.tools.time_converter import time_converter
-from interface.tools.user_management import add_user, delete_user, get_users, login_user
+from interface.tools.user_management import add_user, delete_user, get_users, login_user, change_password, get_user, \
+    change_name
 from simulators.enum import Rooms
 import time
 
@@ -245,12 +246,14 @@ def page_404(e):
 
 
 @app.route("/users")
-def users():
+def users(change_password_error="", change_name_error=""):
     if logged:
         data = get_users(sql_controller)
 
         info = {"name": logged,
-                'users': data}
+                'users': data,
+                "change_password_error": change_password_error,
+                "change_name_error": change_name_error}
         return render_template("users.html", info=info)
     else:
         info = {"log_error": ""}
@@ -278,8 +281,47 @@ def _add_user():
             add_user(sql_controller, name, password)
 
         return redirect("/users", code=302)
-    info = {"log_error": ""}
-    return render_template("login.html", info=info)
+    else:
+        info = {"log_error": ""}
+        return render_template("login.html", info=info)
+
+
+@app.route('/change_password', methods=['POST', 'GET'])
+def _change_user_password():
+    if logged:
+        if request.method == 'POST':
+            old_password = request.form['old_password']
+            new_password = request.form['new_password']
+            if not get_user(sql_controller, logged)['is_admin']:
+                if login_user(sql_controller, logged, old_password):
+                    change_password(sql_controller, logged, new_password)
+                    return redirect("/users", code=302)
+                else:
+                    return users(change_password_error="Wrong password")
+            else:
+                return users(change_password_error="Can not change Admin Password")
+    else:
+        info = {"log_error": ""}
+        return render_template("login.html", info=info)
+
+
+@app.route('/change_name', methods=['POST', 'GET'])
+def _change_user_name():
+    if logged:
+        if request.method == 'POST':
+            new_name = request.form['new_name']
+            password = request.form['password_confirm']
+            if not get_user(sql_controller, logged)['is_admin']:
+                if login_user(sql_controller, logged, password):
+                    change_name(sql_controller, logged, new_name)
+                    return redirect("/users", code=302)
+                else:
+                    return users(change_name_error="Wrong old password")
+            else:
+                return users(change_name_error="Can not change Admin Name")
+    else:
+        info = {"log_error": ""}
+        return render_template("login.html", info=info)
 
 
 if __name__ == '__main__':

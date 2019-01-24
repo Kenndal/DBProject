@@ -19,6 +19,14 @@ def get_users(sql_controller):
     return users_data
 
 
+def get_user(sql_controller, name):
+    users = get_users(sql_controller)
+
+    for user in users:
+        if name == user['name'].replace(" ", ""):
+            return user
+
+
 def login_user(sql_controller, name, password):
     users = sql_controller.get_users()
 
@@ -27,3 +35,11 @@ def login_user(sql_controller, name, password):
             return True
 
     return False
+
+
+def change_password(sql_controller, name, new_password):
+    sql_controller.change_password(name, new_password)
+
+
+def change_name(sql_controller, old_name, new_name):
+    sql_controller.change_user_name(old_name, new_name)

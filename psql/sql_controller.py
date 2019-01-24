@@ -417,3 +417,25 @@ class SqlController:
             self.connection.rollback()
             self.logger.fatal(error)
             return None
+
+    def change_password(self, name, new_password):
+        sql = """update users set password = %s where name=%s;"""
+
+        try:
+            self.logger.info("Changing password...")
+            self.cursor.execute(sql, (new_password, name))
+            self.connection.commit()
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
+
+    def change_user_name(self, old_name, new_name):
+        sql = """update users set name = %s where name=%s;"""
+
+        try:
+            self.logger.info("Changing name...")
+            self.cursor.execute(sql, (new_name, old_name))
+            self.connection.commit()
+        except (Exception, psycopg2.DatabaseError) as error:
+            self.connection.rollback()
+            self.logger.fatal(error)
